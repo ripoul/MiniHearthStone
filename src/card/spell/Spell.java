@@ -1,4 +1,4 @@
-package cards.spell;
+package card.spell;
 
 import card.Card;
 

@@ -1,9 +1,9 @@
 package card.minion;
 
-public class LifeStealMinion extends MinionTauntDecorator {
+public class MinionTauntDecorator extends MinionDecorator {
 
-  public MinionTauntDecorator (Minion minion) {
-    super(m)
+  public MinionTauntDecorator (Minion m) {
+    super(m);
   }
 
   // TO DO

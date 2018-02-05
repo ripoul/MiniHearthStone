@@ -1,9 +1,10 @@
 package card.minion.common;
+import card.minion.Minion;
 
 public class ChefDeRaid extends Minion {
 
   public ChefDeRaid() {
-    super("ChefDeRaid", 2, 2, 3)
+    super("ChefDeRaid", 2, 2, 3);
   }
 
   public static Minion createChefDeRaid(){

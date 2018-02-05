@@ -1,6 +1,6 @@
 package card.minion;
 
-import cards.Card;
+import card.Card;
 import mechanics.TargetableEntity;
 import state.MinionSleepState;
 import state.MinionState;
@@ -9,27 +9,22 @@ public abstract class Minion extends Card implements TargetableEntity{
 
   private String name;
   private int damage;
-	private int health;
-	private int mana;
+  private int health;
+  private int mana;
   private MinionState state;
 
   public Minion (String name, int damage, int health, int mana) {
-    this.name = name;
+	super(name, mana);
     this.damage = damage;
     this.health = health;
-    this.mana = mana;
-    this.state = MinionSleepState(this);
+    this.state = new MinionSleepState(this);
   }
 
-  public Minion(Minion m) {
+  public Minion (Minion m) {
+	super(m.name, m.damage);
     //For the sheep
-    this.name = m.name;
-    this.damage = m.damage;
     this.health = m.health;
     this.mana = m.mana;
-    this.can_attack = m.can_attack;
-    this.taunt = m.taunt;
-    this.charge = m.charge;
 	}
 
   public void summon() {
@@ -44,4 +39,46 @@ public abstract class Minion extends Card implements TargetableEntity{
 		//TO DO
 	}
 
+public String getName() {
+	return name;
+}
+
+public void setName(String name) {
+	this.name = name;
+}
+
+public int getDamage() {
+	return damage;
+}
+
+public void setDamage(int damage) {
+	this.damage = damage;
+}
+
+public int getHealth() {
+	return health;
+}
+
+public void setHealth(int health) {
+	this.health = health;
+}
+
+public int getMana() {
+	return mana;
+}
+
+public void setMana(int mana) {
+	this.mana = mana;
+}
+
+public MinionState getState() {
+	return state;
+}
+
+public void setState(MinionState state) {
+	this.state = state;
+}
+
+  
+  
 }

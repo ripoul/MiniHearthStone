@@ -1,6 +1,6 @@
 package state;
 
-import cards.minion.Minion;
+import card.minion.Minion;
 
 public class MinionSleepState implements MinionState {
 
