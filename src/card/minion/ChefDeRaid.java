@@ -1,15 +1,14 @@
-package card.minion.common;
-import card.minion.Minion;
+package card.minion;
 
 public class ChefDeRaid extends Minion {
 
   public ChefDeRaid() {
-    super("ChefDeRaid", 2, 2, 3);
+	  super("ChefDeRaid", 2, 2, 3);
   }
 
   public static Minion createChefDeRaid(){
-		return new ChefDeRaid();
-	}
+	return new ChefDeRaid();
+  }
 
   public void summon(){
     //TO DO ADD +1 TO THE ATTACK OF OTHER ALLY MINION
