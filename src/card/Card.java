@@ -13,6 +13,8 @@ public abstract class Card {
 	  this.manaCost = manaCost;
 	  this.name = name;
   }
+  
+  public abstract void use();
 
   public String getName() {
 	  return name;

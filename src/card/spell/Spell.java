@@ -7,7 +7,7 @@ public abstract class Spell extends Card {
 
   private Player player;
   private String name;
-  private int mana;
+  private int manaCost;
   
   public Spell(String name, int manaCost) {
 		super(name, manaCost);
@@ -15,6 +15,12 @@ public abstract class Spell extends Card {
   }
   
   public abstract void cast();
+  
+  @Override
+  public void use() {
+	  player.setMana(player.getMana() - manaCost);
+	  cast();
+  }
 
   public Player getPlayer() {
 	  return player;
@@ -33,11 +39,11 @@ public abstract class Spell extends Card {
   }
 
   public int getMana() {
-	  return mana;
+	  return manaCost;
   }
 
   public void setMana(int mana) {
-	  this.mana = mana;
+	  this.manaCost = mana;
   }
   
 }

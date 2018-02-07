@@ -1,6 +1,9 @@
 package card.minion;
 
+import java.util.ArrayList;
+
 import card.Card;
+import game.Board;
 import game.Player;
 import mechanics.TargetableEntity;
 import state.MinionSleepState;
@@ -29,12 +32,20 @@ public abstract class Minion extends Card implements TargetableEntity{
 	    this.manaCost = m.manaCost;
 	}
 	
+	@Override
+	  public void use() {
+		  player.setMana(player.getMana() - manaCost);
+		  summon();
+	  }
+	
 	public void summon() {
-		player.summon(this);
+		ArrayList<Minion> actual_minions = player.getBoard().getMinions();
+		actual_minions.add(this);
 	}
 	
 	public void remove() {
-	    player.remove(this);
+		ArrayList<Minion> actual_minions = player.getBoard().getMinions();
+		actual_minions.remove(this);
 	}
 	
 	public void attack(TargetableEntity target){

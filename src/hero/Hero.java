@@ -12,7 +12,7 @@ public abstract class Hero implements TargetableEntity {
 	private int currentHealth;
 	private int healthMax;
 	private String name;
-	protected static ArrayList<String> playable_cards = new ArrayList<>(Arrays.asList("ChefDeRaid", "ChevaucheurDeLoup",
+	protected ArrayList<String> playable_cards = new ArrayList<>(Arrays.asList("ChefDeRaid", "ChevaucheurDeLoup",
 																					"SanglierBrocheroc", "SoldatDuComteDeLOr",
 																					"YetiNoroit"));
 	
@@ -58,12 +58,12 @@ public abstract class Hero implements TargetableEntity {
 		this.name = name;
 	}
 
-	public static ArrayList<String> getPlayable_cards() {
+	public ArrayList<String> getPlayable_cards() {
 		return playable_cards;
 	}
 
 	public static void setPlayable_cards(ArrayList<String> playable_cards) {
-		Hero.playable_cards = playable_cards;
+		playable_cards = playable_cards;
 	}
 	
 }
