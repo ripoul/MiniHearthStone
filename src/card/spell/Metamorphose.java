@@ -1,7 +1,5 @@
 package card.spell;
 
-import card.minion.Minion;
-
 public class Metamorphose extends Spell {
 
 	public Metamorphose() {
@@ -13,6 +11,10 @@ public class Metamorphose extends Spell {
 		//Get minion targeted
 		//remove targeted minion
 		
+	}
+	
+	public static Spell createMetamorphose(){
+		  return new Metamorphose();
 	}
 
 }

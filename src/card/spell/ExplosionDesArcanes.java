@@ -11,5 +11,9 @@ public class ExplosionDesArcanes extends Spell {
 		//Get opponent
 		//Deal 1 damage to all the enemy board
 	}
+	
+	public static Spell createExplosionDesArcanes(){
+		  return new ExplosionDesArcanes();
+	}
 
 }

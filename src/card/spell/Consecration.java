@@ -12,4 +12,8 @@ public class Consecration extends Spell {
 		//Deal 2 damage to all the enemy board
 	}
 	
+	public static Spell createConsecration(){
+		  return new Consecration();
+	}
+	
 }

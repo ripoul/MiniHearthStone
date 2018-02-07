@@ -10,5 +10,9 @@ public class Tourbillon extends Spell {
 	public void cast() {
 		// Deal 1 damage to all minions on each board
 	}
+	
+	public static Spell createTourbillon(){
+		  return new Tourbillon();
+	}
 
 }

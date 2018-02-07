@@ -11,5 +11,9 @@ public class MaitriseDeBlocage extends Spell {
 		int current_armor = this.getPlayer().getHero().getArmor();
 		this.getPlayer().getHero().setArmor(current_armor + 5);
 	}
+	
+	public static Spell createMaitriseDeBlocage(){
+		  return new MaitriseDeBlocage();
+	}
 
 }
