@@ -3,7 +3,6 @@ package card.minion;
 import java.util.ArrayList;
 
 import card.Card;
-import game.Board;
 import game.Player;
 import mechanics.TargetableEntity;
 import state.MinionSleepState;
@@ -23,6 +22,13 @@ public abstract class Minion extends Card implements TargetableEntity{
 	    this.damage = damage;
 	    this.health = health;
 	    this.state = new MinionSleepState(this);
+	}
+	
+	public void takeDamage(int damage){
+		health = health-damage;
+		if (health <= 0){
+			this.remove();
+		}
 	}
 	
 	public Minion (Minion m) {

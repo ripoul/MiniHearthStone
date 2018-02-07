@@ -1,6 +1,5 @@
 package hero;
 
-import java.awt.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -22,6 +21,13 @@ public abstract class Hero implements TargetableEntity {
 		this.currentHealth = currentHealth;
 		this.healthMax = healthMax;
 		this.name = name;
+	}
+	
+	public void takeDamage(int damage){
+		currentHealth = currentHealth-damage;
+		if (currentHealth <= 0){
+			//Call sur le observer
+		}
 	}
 	
 	public abstract void useHeroPower();
