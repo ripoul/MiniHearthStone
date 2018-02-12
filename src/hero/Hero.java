@@ -1,5 +1,8 @@
 package hero;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import mechanics.TargetableEntity;
 
 public abstract class Hero implements TargetableEntity {
@@ -8,6 +11,9 @@ public abstract class Hero implements TargetableEntity {
 	private int currentHealth;
 	private int healthMax;
 	private String name;
+	protected ArrayList<String> playable_cards = new ArrayList<>(Arrays.asList("ChefDeRaid", "ChevaucheurDeLoup",
+																			   "SanglierBrocheroc", "SoldatDuComteDeLOr",
+																			   "YetiNoroit"));
 	
 	public Hero(int armor, int currentHealth, int healthMax, String name) {
 		super();
@@ -15,6 +21,13 @@ public abstract class Hero implements TargetableEntity {
 		this.currentHealth = currentHealth;
 		this.healthMax = healthMax;
 		this.name = name;
+	}
+	
+	public void takeDamage(int damage){
+		currentHealth = currentHealth-damage;
+		if (currentHealth <= 0){
+			//Call sur le observer
+		}
 	}
 	
 	public abstract void useHeroPower();
@@ -49,6 +62,14 @@ public abstract class Hero implements TargetableEntity {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public ArrayList<String> getPlayable_cards() {
+		return playable_cards;
+	}
+
+	public static void setPlayable_cards(ArrayList<String> playable_cards) {
+		playable_cards = playable_cards;
 	}
 	
 }

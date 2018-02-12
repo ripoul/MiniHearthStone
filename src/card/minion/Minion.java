@@ -1,5 +1,7 @@
 package card.minion;
 
+import java.util.ArrayList;
+
 import card.Card;
 import game.Player;
 import mechanics.TargetableEntity;
@@ -22,18 +24,33 @@ public abstract class Minion extends Card implements TargetableEntity{
 	    this.state = new MinionSleepState(this);
 	}
 	
+	public void takeDamage(int damage){
+		health = health-damage;
+		if (health <= 0){
+			this.remove();
+		}
+	}
+	
 	public Minion (Minion m) {
 		super(m.name, m.damage);
 	    this.health = m.health;
 	    this.manaCost = m.manaCost;
 	}
 	
+	@Override
+	  public void use() {
+		  player.setMana(player.getMana() - manaCost);
+		  summon();
+	  }
+	
 	public void summon() {
-		player.summon(this);
+		ArrayList<Minion> actual_minions = player.getBoard().getMinions();
+		actual_minions.add(this);
 	}
 	
 	public void remove() {
-	    player.remove(this);
+		ArrayList<Minion> actual_minions = player.getBoard().getMinions();
+		actual_minions.remove(this);
 	}
 	
 	public void attack(TargetableEntity target){
@@ -62,9 +79,6 @@ public abstract class Minion extends Card implements TargetableEntity{
 	
 	public void setHealth(int health) {
 		this.health = health;
-		if (this.health <=0) {
-			this.remove();
-		}
 	}
 	
 	public int getMana() {

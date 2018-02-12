@@ -1,8 +1,10 @@
 package game;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import card.Card;
+import card.CardFactory;
 import card.minion.Minion;
 import hero.Hero;
 
@@ -23,15 +25,25 @@ public class Player {
 		this.mana = 1;
 	}
 	
-	public void draw(){
-		//draw a card
+	public void generateHand(){
+		for (int i=0; i<3; i++){
+			draw();
+		}
 	}
 	
-	public void summon(Minion m) {
-		ArrayList<Minion> actual_minions = board.getMinions();
-		actual_minions.add(m);
+	public void playCard(Card card){
+		if (mana > card.getManaCost()){
+			card.use();
+			hand.remove(card);
+		}
 	}
-
+	
+	public void draw(){
+		Random rand = new Random();
+		String str_card = this.hero.getPlayable_cards().get(rand.nextInt(hero.getPlayable_cards().size()));
+		hand.add(CardFactory.getCard(str_card));
+	}
+	
 	public ArrayList<Card> getHand() {
 		return hand;
 	}
@@ -62,11 +74,6 @@ public class Player {
 
 	public void setMana(int mana) {
 		this.mana = mana;
-	}
-
-	public void remove(Minion m) {
-		ArrayList<Minion> actual_minions = board.getMinions();
-		actual_minions.remove(m);
 	}
 
 	public Hero getHero() {

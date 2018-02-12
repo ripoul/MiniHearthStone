@@ -15,4 +15,8 @@ public class ImageMiroir extends Spell {
 		TokenImageMiroir.createImageMiroir().summon();
 	}
 	
+	public static Spell createImageMiroir(){
+		  return new ImageMiroir();
+	}
+	
 }

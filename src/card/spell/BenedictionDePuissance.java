@@ -26,5 +26,9 @@ public class BenedictionDePuissance extends Spell {
 		}
 		m.setDamage(m.getDamage() + 1);
 	}
+	
+	public static Spell createBenedictionDePuissance(){
+		  return new BenedictionDePuissance();
+	}
 
 }

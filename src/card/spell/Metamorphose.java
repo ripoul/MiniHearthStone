@@ -26,5 +26,9 @@ public class Metamorphose extends Spell {
 		m.remove();
 		getPlayer().getBoard().getMinions().add(new Mouton());
 	}
+	
+	public static Spell createMetamorphose(){
+		  return new Metamorphose();
+	}
 
 }

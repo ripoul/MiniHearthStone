@@ -15,8 +15,12 @@ public class ExplosionDesArcanes extends Spell {
 	public void cast() {
 		ArrayList<Minion> ennemy_minions = ((Player) getPlayer()).getEnnemy_player().getBoard().getMinions();
 		 for (Minion minion : ennemy_minions) {
-			 minion.setHealth(minion.getHealth() - 1);
+			 minion.takeDamage(1);
 		 }
+	}
+	
+	public static Spell createExplosionDesArcanes(){
+		  return new ExplosionDesArcanes();
 	}
 
 }

@@ -10,6 +10,13 @@ import card.minion.ChevaucheurDeLoup;
 import card.minion.SanglierBrocheroc;
 import card.minion.SoldatDuComteDeLOr;
 import card.minion.YetiNoroit;
+import card.spell.BenedictionDePuissance;
+import card.spell.Consecration;
+import card.spell.ExplosionDesArcanes;
+import card.spell.ImageMiroir;
+import card.spell.MaitriseDeBlocage;
+import card.spell.Metamorphose;
+import card.spell.Tourbillon;
 
 public class CardFactory {
 
@@ -24,6 +31,13 @@ public class CardFactory {
 		available_card_map.put("AvocatCommisDOffice", AvocatCommisDOffice.createAvocatCommisDOffice());
 		available_card_map.put("ChampionFrisselame", ChampionFrisselame.createChampionFrisselame());
 		
+		available_card_map.put("BenedictionDePuissance", BenedictionDePuissance.createBenedictionDePuissance());
+		available_card_map.put("Consecration", Consecration.createConsecration());
+		available_card_map.put("ExplosionDesArcanes", ExplosionDesArcanes.createExplosionDesArcanes());
+		available_card_map.put("ImageMiroir", ImageMiroir.createImageMiroir());
+		available_card_map.put("MaitriseDeBlocage", MaitriseDeBlocage.createMaitriseDeBlocage());
+		available_card_map.put("Metamorphose", Metamorphose.createMetamorphose());
+		available_card_map.put("Tourbillon", Tourbillon.createTourbillon());
 	}
 	
 	
