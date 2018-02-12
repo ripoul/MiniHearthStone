@@ -3,6 +3,7 @@ package hero;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import game.Player;
 import mechanics.TargetableEntity;
 
 public abstract class Hero implements TargetableEntity {
@@ -11,6 +12,7 @@ public abstract class Hero implements TargetableEntity {
 	private int currentHealth;
 	private int healthMax;
 	private String name;
+	private Player player;
 	protected ArrayList<String> playable_cards = new ArrayList<>(Arrays.asList("ChefDeRaid", "ChevaucheurDeLoup",
 																			   "SanglierBrocheroc", "SoldatDuComteDeLOr",
 																			   "YetiNoroit"));
@@ -68,8 +70,16 @@ public abstract class Hero implements TargetableEntity {
 		return playable_cards;
 	}
 
-	public static void setPlayable_cards(ArrayList<String> playable_cards) {
-		playable_cards = playable_cards;
+	public void setPlayable_cards(ArrayList<String> playable_cards) {
+		this.playable_cards = playable_cards;
 	}
-	
+
+	public Player getPlayer() {
+		return player;
+	}
+
+	public void setPlayer(Player player) {
+		this.player = player;
+	}
+		
 }

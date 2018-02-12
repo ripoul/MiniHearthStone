@@ -20,7 +20,11 @@ public class Metamorphose extends Spell {
 			Scanner reader = new Scanner(System.in);
 			int n = reader.nextInt();
 			reader.close();
-			m = getPlayer().getBoard().getMinions().get(n);
+			try {
+				m = getPlayer().getBoard().getMinions().get(n);
+			}catch (IndexOutOfBoundsException e) {
+				
+			}
 			reader.close();
 		}
 		m.remove();

@@ -92,5 +92,16 @@ public class Player {
 		this.ennemy_player = ennemy_player;
 	}
 	
+	public void displayMyHero () {
+		System.out.println("My Hero");
+		System.out.println("Hero index | Hero name | Hero life | Hero armor");
+		System.out.println((getBoard().getMinions().size() + 1)+" | "+ getHero().getName()+" | "+ getHero().getCurrentHealth()+" | "+ getHero().getArmor());
+	}
+	
+	public void displayEnnemyHero () {
+		System.out.println("My Hero");
+		System.out.println("Hero index | Hero name | Hero life | Hero armor");
+		System.out.println((getEnnemy_player().getBoard().getMinions().size() + 1)+" | "+ getHero().getName()+" | "+ getHero().getCurrentHealth()+" | "+ getHero().getArmor());
+	}
 	
 }

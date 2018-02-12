@@ -3,8 +3,9 @@ package hero;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
-import card.Card;
+import card.minion.Minion;
 
 public class Mage extends Hero {
 	
@@ -17,8 +18,31 @@ public class Mage extends Hero {
 
 	@Override
 	public void useHeroPower() {
-		//get Target
-		//Deal 1 damage to target
+		System.out.println("Sélectionner l'index de l'entite à attaquer");
+		getPlayer().getEnnemy_player().getBoard().displayMinionAsList();
+		getPlayer().displayEnnemyHero();
+		Minion m = null;
+		Hero h = null;
+		while(m == null || h == null) {
+			Scanner reader = new Scanner(System.in);
+			int n = reader.nextInt();
+			reader.close();
+			try {
+				m = getPlayer().getBoard().getMinions().get(n);
+				if (n == (getPlayer().getBoard().getMinions().size() + 1)) {
+					h = this;
+				}
+			}catch (IndexOutOfBoundsException e) {
+				System.out.println("Veuillez re entrer à nouveau un des index affiches plus haut");
+			}
+			reader.close();
+		}
+		if (m != null) {
+			m.takeDamage(1);
+		}
+		if (h != null) {
+			h.takeDamage(1);
+		}
 	}
 
 }
