@@ -1,5 +1,10 @@
 package card.spell;
 
+import java.util.ArrayList;
+
+import card.minion.Minion;
+import game.Player;
+
 public class Tourbillon extends Spell {
 
 	public Tourbillon() {
@@ -8,7 +13,14 @@ public class Tourbillon extends Spell {
 
 	@Override
 	public void cast() {
-		// Deal 1 damage to all minions on each board
+		ArrayList<Minion> ennemy_minions = ((Player) getPlayer()).getEnnemy_player().getBoard().getMinions();
+		 for (Minion minion : ennemy_minions) {
+			 minion.setHealth(minion.getHealth() - 1);
+		 }
+		ArrayList<Minion> minions = getPlayer().getBoard().getMinions();
+		for (Minion minion : minions) {
+			 minion.setHealth(minion.getHealth() - 1);
+		 }
 	}
 
 }

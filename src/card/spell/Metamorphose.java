@@ -1,6 +1,9 @@
 package card.spell;
 
+import java.util.Scanner;
+
 import card.minion.Minion;
+import card.minion.Mouton;
 
 public class Metamorphose extends Spell {
 
@@ -10,9 +13,18 @@ public class Metamorphose extends Spell {
 
 	@Override
 	public void cast() {
-		//Get minion targeted
-		//remove targeted minion
-		
+		getPlayer().getBoard().displayMinionAsList();
+		System.out.println("Entrer l'index du serviteur à cibler par metamorphose");
+		Minion m = null;
+		while(m == null) {
+			Scanner reader = new Scanner(System.in);
+			int n = reader.nextInt();
+			reader.close();
+			m = getPlayer().getBoard().getMinions().get(n);
+			reader.close();
+		}
+		m.remove();
+		getPlayer().getBoard().getMinions().add(new Mouton());
 	}
 
 }

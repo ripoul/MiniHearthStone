@@ -24,7 +24,6 @@ public abstract class Minion extends Card implements TargetableEntity{
 	
 	public Minion (Minion m) {
 		super(m.name, m.damage);
-	    //For the sheep
 	    this.health = m.health;
 	    this.manaCost = m.manaCost;
 	}
@@ -38,7 +37,7 @@ public abstract class Minion extends Card implements TargetableEntity{
 	}
 	
 	public void attack(TargetableEntity target){
-		//TO DO
+		
 	}
 
 	public String getName() {
@@ -63,6 +62,9 @@ public abstract class Minion extends Card implements TargetableEntity{
 	
 	public void setHealth(int health) {
 		this.health = health;
+		if (this.health <=0) {
+			this.remove();
+		}
 	}
 	
 	public int getMana() {

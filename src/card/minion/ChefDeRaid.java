@@ -11,12 +11,16 @@ public class ChefDeRaid extends Minion {
   }
 
   public void summon(){
-    //TO DO ADD +1 TO THE ATTACK OF OTHER ALLY MINION
+    for (Minion m : getPlayer().getBoard().getMinions()) {
+    	m.setDamage(m.getDamage() +1);
+    }
   }
 
   
   public void remove() {
-      //TO DO REMOVE 1 TO THE ATTACK OF OTHER ALLY MINION
+	  for (Minion m : getPlayer().getBoard().getMinions()) {
+	    	m.setDamage(m.getDamage() -1);
+	    }
   }
 
 }

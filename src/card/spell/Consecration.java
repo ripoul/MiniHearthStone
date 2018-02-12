@@ -1,5 +1,10 @@
 package card.spell;
 
+import java.util.ArrayList;
+
+import card.minion.Minion;
+import game.Player;
+
 public class Consecration extends Spell {
 
 	public Consecration() {
@@ -8,8 +13,10 @@ public class Consecration extends Spell {
 
 	@Override
 	public void cast() {
-		//Get opponent
-		//Deal 2 damage to all the enemy board
+		 ArrayList<Minion> ennemy_minions = ((Player) getPlayer()).getEnnemy_player().getBoard().getMinions();
+		 for (Minion minion : ennemy_minions) {
+			 minion.setHealth(minion.getHealth() - 2);
+		 }
 	}
 	
 }

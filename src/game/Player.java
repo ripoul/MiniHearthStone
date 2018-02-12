@@ -13,6 +13,7 @@ public class Player {
 	private String name;
 	private int mana;
 	private Hero hero;
+	private Player ennemy_player;
 	
 	public Player(String name, Hero hero) {
 		super();
@@ -75,5 +76,14 @@ public class Player {
 	public void setHero(Hero hero) {
 		this.hero = hero;
 	}
+
+	public Player getEnnemy_player() {
+		return ennemy_player;
+	}
+
+	public void setEnnemy_player(Player ennemy_player) {
+		this.ennemy_player = ennemy_player;
+	}
+	
 	
 }
