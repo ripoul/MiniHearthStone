@@ -18,7 +18,7 @@ public class Mage extends Hero {
 
 	@Override
 	public void useHeroPower() {
-		System.out.println("Sélectionner l'index de l'entite à attaquer");
+		System.out.println("Selectionner l'index de l'entite a attaquer");
 		getPlayer().getEnnemy_player().getBoard().displayMinionAsList();
 		getPlayer().displayEnnemyHero();
 		Minion m = null;
@@ -30,10 +30,10 @@ public class Mage extends Hero {
 			try {
 				m = getPlayer().getBoard().getMinions().get(n);
 				if (n == (getPlayer().getBoard().getMinions().size() + 1)) {
-					h = this;
+					h = this.getPlayer().getEnnemy_player().getHero();;
 				}
 			}catch (IndexOutOfBoundsException e) {
-				System.out.println("Veuillez re entrer à nouveau un des index affiches plus haut");
+				System.out.println("Veuillez re entrer a nouveau un des index affiches plus haut");
 			}
 			reader.close();
 		}

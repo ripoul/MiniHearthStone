@@ -103,6 +103,12 @@ public abstract class Minion extends Card implements TargetableEntity{
 
 	public void setPlayer(Player player) {
 		this.player = player;
+	}
+
+	@Override
+	public String toString() {
+		return "Minion [name=" + name + ", damage=" + damage + ", health=" + health + ", manaCost=" + manaCost
+				+ ", state=" + state + "]";
 	}  
-  
+	
 }

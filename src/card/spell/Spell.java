@@ -45,5 +45,12 @@ public abstract class Spell extends Card {
   public void setMana(int mana) {
 	  this.manaCost = mana;
   }
+
+  @Override
+  public String toString() {
+	  return "Spell [player=" + player + ", name=" + name + ", manaCost=" + manaCost + "]";
+  }
+  
+  
   
 }

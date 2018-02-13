@@ -21,7 +21,7 @@ public class Player {
 		this.hand = new ArrayList<Card>();
 		this.board = new Board(hero);
 		this.name = name;
-		this.mana = 1;
+		this.mana = 0;
 	}
 	
 	public void generateHand(){
@@ -37,10 +37,22 @@ public class Player {
 		}
 	}
 	
+	public void gainMana(){
+		this.mana = mana + 1;
+	}
+	
 	public void draw(){
 		Random rand = new Random();
 		String str_card = this.hero.getPlayable_cards().get(rand.nextInt(hero.getPlayable_cards().size()));
 		hand.add(CardFactory.getCard(str_card));
+	}
+	
+	public void displayHand(){
+		System.out.println("Cards in your hand");
+		int i = 0;
+		for (Card card : hand){
+			System.out.println("Index "+i+"\n"+card.toString());
+		}
 	}
 	
 	public ArrayList<Card> getHand() {
