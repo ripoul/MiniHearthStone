@@ -2,7 +2,6 @@ package game;
 
 import java.util.ArrayList;
 import java.util.Random;
-
 import card.Card;
 import card.CardFactory;
 import card.minion.Minion;

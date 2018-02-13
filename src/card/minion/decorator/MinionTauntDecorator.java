@@ -1,6 +1,7 @@
-package card.minion;
+package card.minion.decorator;
 
-import mechanics.TargetableEntity;
+import card.minion.Minion;
+import card.minion.decorator.MinionDecorator;
 
 public class MinionTauntDecorator extends MinionDecorator {
 

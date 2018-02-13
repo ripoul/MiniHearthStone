@@ -1,5 +1,6 @@
-package card.minion;
+package card.minion.decorator;
 
+import card.minion.Minion;
 import state.MinionReadyState;
 
 public class MinionChargeDecorator extends MinionDecorator {

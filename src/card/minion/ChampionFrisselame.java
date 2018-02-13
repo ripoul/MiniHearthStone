@@ -1,5 +1,8 @@
 package card.minion;
 
+import card.minion.decorator.MinionChargeDecorator;
+import card.minion.decorator.MinionLifeLeechDecorator;
+
 public class ChampionFrisselame extends Minion {
 
 	public ChampionFrisselame() {

@@ -1,5 +1,7 @@
 package card.minion;
 
+import card.minion.decorator.MinionTauntDecorator;
+
 public class AvocatCommisDOffice extends Minion {
 	
 	public AvocatCommisDOffice() {

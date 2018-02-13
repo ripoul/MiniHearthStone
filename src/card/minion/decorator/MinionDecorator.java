@@ -1,4 +1,6 @@
-package card.minion;
+package card.minion.decorator;
+
+import card.minion.Minion;
 
 public abstract class MinionDecorator extends Minion{
 

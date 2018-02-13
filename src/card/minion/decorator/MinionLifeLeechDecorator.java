@@ -1,5 +1,7 @@
-package card.minion;
+package card.minion.decorator;
 
+import card.minion.Minion;
+import card.minion.decorator.MinionDecorator;
 import mechanics.TargetableEntity;
 
 public class MinionLifeLeechDecorator extends MinionDecorator {
