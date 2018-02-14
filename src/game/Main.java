@@ -120,6 +120,9 @@ public class Main {
 
 		Player player1 = new Player("Player 1", player_1_hero);
 		Player player2 = new Player("Player 2", player_2_hero);
+		
+		player1.setEnnemy_player(player2);
+		player2.setEnnemy_player(player1);
 
 		ArrayList<Player> players = new ArrayList<Player>();
 
