@@ -15,18 +15,16 @@ public class BenedictionDePuissance extends Spell {
 	@Override
 	public void cast() {
 		getPlayer().getBoard().displayMinionAsList();
-		System.out.println("Entrer l'index du serviteur à cibler afin de lui accorder benediction de puissance");
+		System.out.println("Entrer l'index du serviteur ï¿½ cibler afin de lui accorder benediction de puissance");
 		Minion m = null;
+		Scanner reader = new Scanner(System.in);
 		while(m == null) {
-			Scanner reader = new Scanner(System.in);
 			int n = reader.nextInt();
-			reader.close();
 			try {
 				m = getPlayer().getBoard().getMinions().get(n);
 			}catch (IndexOutOfBoundsException e) {
 				
 			}
-			reader.close();
 		}
 		m.setDamage(m.getDamage() + 1);
 	}

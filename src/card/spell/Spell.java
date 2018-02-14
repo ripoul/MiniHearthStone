@@ -20,6 +20,7 @@ public abstract class Spell extends Card {
   @Override
   public void use() {
 	  player.setMana(player.getMana() - manaCost);
+	  System.out.println("test : " + player.getMana());
 	  cast();
   }
 

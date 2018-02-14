@@ -14,21 +14,23 @@ public class Metamorphose extends Spell {
 	@Override
 	public void cast() {
 		getPlayer().getBoard().displayMinionAsList();
-		System.out.println("Entrer l'index du serviteur à cibler par metamorphose");
+		System.out.println("Entrer l'index du serviteur ï¿½ cibler par metamorphose");
 		Minion m = null;
+		Scanner reader = new Scanner(System.in);
 		while(m == null) {
-			Scanner reader = new Scanner(System.in);
 			int n = reader.nextInt();
-			reader.close();
 			try {
 				m = getPlayer().getBoard().getMinions().get(n);
 			}catch (IndexOutOfBoundsException e) {
-				
+				System.out.println("No ennemy minion you can't use this spell");
+				getPlayer().setMana(getManaCost()+ getPlayer().getMana());
+				break;
 			}
-			reader.close();
 		}
-		m.remove();
-		getPlayer().getBoard().getMinions().add(new Mouton());
+		if (m != null){
+			m.remove();
+			getPlayer().getBoard().getMinions().add(new Mouton());
+		}
 	}
 	
 	public static Spell createMetamorphose(){
