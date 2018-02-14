@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import card.minion.Minion;
 import card.minion.Mouton;
+import game.Affichage;
 
 public class Metamorphose extends Spell {
 
@@ -16,9 +17,8 @@ public class Metamorphose extends Spell {
 		getPlayer().getBoard().displayMinionAsList();
 		System.out.println("Entrer l'index du serviteur � cibler par metamorphose");
 		Minion m = null;
-		Scanner reader = new Scanner(System.in);
 		while(m == null) {
-			int n = reader.nextInt();
+			int n = Affichage.lireInt();
 			try {
 				m = getPlayer().getBoard().getMinions().get(n);
 			}catch (IndexOutOfBoundsException e) {

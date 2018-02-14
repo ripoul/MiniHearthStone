@@ -2,18 +2,19 @@ package game;
 
 import java.util.Scanner;
 
-public class Affichage {
-    Scanner scanner;
+public abstract class Affichage {
+    private static Scanner scanner;
 
-    public Affichage(){
-        scanner = new Scanner(System.in);
+    public static int lireInt() {
+        if (scanner != null) {
+            return scanner.nextInt();
+        }else{
+            scanner = new Scanner(System.in);
+            return scanner.nextInt();
+        }
     }
 
-    public int lireInt(){
-        return scanner.nextInt();
-    }
-
-    public void close(){
+    public static void close(){
         scanner.close();
     }
 }

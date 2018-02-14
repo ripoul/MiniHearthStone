@@ -8,8 +8,6 @@ import hero.Paladin;
 import hero.Warrior;
 
 public class Main {
-	private static Affichage affichage = new Affichage();
-
 	public static void main(String[] args) {
 
 		Player first_player;
@@ -50,7 +48,7 @@ public class Main {
 			
 			System.out.println("1 - Display your infos\n2 - Play a card\n3 - Use hero power\n4 - End your turn\n-1 - Return back to this choice list");
 
-			n = affichage.lireInt();
+			n = Affichage.lireInt();
 			switch(n){
 				case 1:
 					player.getBoard().displayMinionAsList();
@@ -59,7 +57,7 @@ public class Main {
 				case 2:
 					player.displayHand();
 					try {
-						n = affichage.lireInt();
+						n = Affichage.lireInt();
 						// TO DO
 					}catch(IndexOutOfBoundsException e){
 						//TO DO
@@ -85,7 +83,7 @@ public class Main {
 		Hero player_1_hero = null;
 		int n = 0;
 		while (n != 1 && n!= 2 && n != 3){
-			n = affichage.lireInt();
+			n = Affichage.lireInt();
 		}
 		switch(n){
 			case 1:
@@ -104,7 +102,7 @@ public class Main {
 		Hero player_2_hero = null;
 		n = 0;
 		while (n != 1 && n!= 2 && n != 3){
-			n = affichage.lireInt();
+			n = Affichage.lireInt();
 		}
 		switch(n){
 			case 1:
