@@ -40,19 +40,21 @@ public class Main {
 
 	private static void turn(Player player) {
 		player.gainMana();
+		player.setMana(player.getMana_max());
 		player.draw();
-		System.out.println("1 - Display your infos\n2 - Play a card\n3 - Use hero power\n4 - End your turn\n-1 - Return back to this choice list");
 		int n;
 
 
 		boolean end_turn = false;
 		while (!end_turn){
+			
+			System.out.println("1 - Display your infos\n2 - Play a card\n3 - Use hero power\n4 - End your turn\n-1 - Return back to this choice list");
 
 			n = affichage.lireInt();
 			switch(n){
 				case 1:
 					player.getBoard().displayMinionAsList();
-					player.displayMyHero();
+					player.displayMyInfos();
 					break;
 				case 2:
 					player.displayHand();
@@ -64,6 +66,8 @@ public class Main {
 					}
 					break;
 				case 3:
+					player.getHero().setPlayer(player);
+					player.useHeroPower();
 					break;
 				case 4:
 					end_turn = true;
@@ -121,9 +125,7 @@ public class Main {
 
 		Random rn = new Random();
 		int rand = rn.nextInt(1);
-
-		Main.debug("rand = "+rand);
-
+		
 		if (rand == 1){
 			System.out.println("Player 2 begin !");
 			player2.generateHand();

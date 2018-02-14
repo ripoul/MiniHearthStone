@@ -13,8 +13,10 @@ public class Player {
 	private Board board;
 	private String name;
 	private int mana;
+	private int mana_max;
 	private Hero hero;
 	private Player ennemy_player;
+	private boolean used_hero_power;
 	
 	public Player(String name, Hero hero) {
 		super();
@@ -23,6 +25,19 @@ public class Player {
 		this.board = new Board(hero);
 		this.name = name;
 		this.mana = 0;
+		this.used_hero_power = false;
+	}
+	
+	public void useHeroPower(){
+		if (mana < 2) {
+			System.out.println("Not enough mana");
+		}
+		else if (used_hero_power == true){
+			System.out.println("Hero power already used this turn");
+		}else{
+			hero.useHeroPower();
+			used_hero_power = true;
+		}
 	}
 	
 	public void generateHand(){
@@ -39,7 +54,9 @@ public class Player {
 	}
 	
 	public void gainMana(){
-		this.mana = mana + 1;
+		if (mana_max < 10){
+			this.mana_max = mana_max + 1;
+		}
 	}
 	
 	public void draw(){
@@ -55,6 +72,7 @@ public class Player {
 		int i = 0;
 		for (Card card : hand){
 			System.out.println("Index "+i+"\n"+card.toString());
+			i++;
 		}
 	}
 	
@@ -106,6 +124,14 @@ public class Player {
 		this.ennemy_player = ennemy_player;
 	}
 	
+	public int getMana_max() {
+		return mana_max;
+	}
+
+	public void setMana_max(int mana_max) {
+		this.mana_max = mana_max;
+	}
+
 	public void displayMyHero () {
 		System.out.println("My Hero");
 		System.out.println("Hero index | Hero name | Hero life | Hero armor");
@@ -116,6 +142,15 @@ public class Player {
 		System.out.println("My Hero");
 		System.out.println("Hero index | Hero name | Hero life | Hero armor");
 		System.out.println((getEnnemy_player().getBoard().getMinions().size() + 1)+" | "+ getHero().getName()+" | "+ getHero().getCurrentHealth()+" | "+ getHero().getArmor());
+	}
+	
+	public void displayMyMana() {
+		System.out.println("My mana : "+mana);
+	}
+	
+	public void displayMyInfos() {
+		displayMyMana();
+		displayMyHero();
 	}
 	
 }

@@ -19,6 +19,7 @@ public class Paladin extends Hero {
 	@Override
 	public void useHeroPower() {
 		Minion m = RecrueDeLaMainDArgent.createRecrueDeLaMainDArgent();
+		m.setPlayer(this.getPlayer());
 		m.summon();
 	}
 	
