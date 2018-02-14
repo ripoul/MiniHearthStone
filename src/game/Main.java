@@ -2,6 +2,7 @@ package game;
 
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
+import java.util.Random;
 import java.util.Scanner;
 
 import card.Card;
@@ -82,10 +83,9 @@ public class Main {
 		System.out.println("Type 1 for Mage, type 2 for Paladin & type 3 for Warrior");
 		Hero player_1_hero = null;
 		int n = 0;
+		Scanner reader = new Scanner(System.in);
 		while (n != 1 && n!= 2 && n != 3){
-			Scanner reader = new Scanner(System.in);
 			n = reader.nextInt();
-			reader.close();
 		}
 		switch(n){
 		case 1:
@@ -100,13 +100,13 @@ public class Main {
 		}
 		System.out.println("Player 2 please select a hero in the list bellow :");
 		System.out.println("Type 1 for Mage, type 2 for Paladin & type 3 for Warrior");
+
 		Hero player_2_hero = null;
 		n = 0;
 		while (n != 1 && n!= 2 && n != 3){
-			Scanner reader = new Scanner(System.in);
 			n = reader.nextInt();
-			reader.close();
 		}
+		reader.close();
 		switch(n){
 		case 1:
 			player_2_hero = new Mage();
@@ -123,8 +123,9 @@ public class Main {
 		Player player2 = new Player("Player 2", player_2_hero);
 		
 		ArrayList<Player> players = new ArrayList<Player>();
-		
-		int rand = (int)(Math.random() * (1-0)) + 0;
+
+		Random rn = new Random();
+		int rand = rn.nextInt() % 2;
 		
 		if (rand == 1){
 			System.out.println("Player 2 commence !");
