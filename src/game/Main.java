@@ -150,5 +150,6 @@ public class Main {
 
 	public static void debug(String s){
 		System.out.println("-----------------------------DEBUG---------------------------------\n"+ s);
+		System.out.println("---------------------------FIN DEBUG-------------------------------");
 	}
 }
