@@ -36,6 +36,7 @@ public class Player {
 			System.out.println("Hero power already used this turn");
 		}else{
 			hero.useHeroPower();
+			this.setMana(this.getMana() - 2 );
 			used_hero_power = true;
 		}
 	}
