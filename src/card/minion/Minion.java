@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import card.Card;
 import game.Player;
 import mechanics.TargetableEntity;
+import state.MinionReadyState;
 import state.MinionSleepState;
 import state.MinionState;
 
@@ -113,7 +114,11 @@ public abstract class Minion extends Card implements TargetableEntity{
 	 * 
 	 */
 	public void attack(TargetableEntity target){
-		target.takeDamage(damage);
+		if (state.getClass().equals(MinionReadyState.class)){
+			target.takeDamage(damage);
+		}else{
+			System.out.println(this.name+" can't attack this turn wait next turn");
+		}
 	}
 
 	/**

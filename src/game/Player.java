@@ -5,7 +5,9 @@ import java.util.Random;
 import card.Card;
 import card.CardFactory;
 import card.minion.Minion;
+import card.minion.decorator.MinionChargeDecorator;
 import hero.Hero;
+import state.MinionReadyState;
 
 public class Player {
 
@@ -263,6 +265,14 @@ public class Player {
 	public void displayMyInfos() {
 		displayMyMana();
 		displayMyHero();
+	}
+	
+	public void wakeUpBoard() {
+		for (Minion minion : getBoard().minions){
+			if (!minion.getState().getClass().equals(MinionReadyState.class)){
+				minion = new MinionChargeDecorator(minion);
+			}
+		}
 	}
 	
 }
