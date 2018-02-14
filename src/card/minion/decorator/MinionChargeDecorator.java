@@ -10,7 +10,7 @@ public class MinionChargeDecorator extends MinionDecorator {
 
   public MinionChargeDecorator(Minion m) {
 		super(m);
-		this.setState(new MinionReadyState(m));
+		setState(new MinionReadyState(m));
 	}
   
   @Override

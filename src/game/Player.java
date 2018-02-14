@@ -25,6 +25,10 @@ public class Player {
 		this.mana = 0;
 	}
 	
+	public void useHeroPower(){
+		hero.useHeroPower();
+	}
+	
 	public void generateHand(){
 		for (int i=0; i<3; i++){
 			draw();
@@ -55,6 +59,7 @@ public class Player {
 		int i = 0;
 		for (Card card : hand){
 			System.out.println("Index "+i+"\n"+card.toString());
+			i++;
 		}
 	}
 	

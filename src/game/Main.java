@@ -65,6 +65,8 @@ public class Main {
 					}
 					break;
 				case 3:
+					player.getHero().setPlayer(player);
+					player.useHeroPower();
 					break;
 				case 4:
 					end_turn = true;
@@ -122,9 +124,7 @@ public class Main {
 
 		Random rn = new Random();
 		int rand = rn.nextInt(1);
-
-		Main.debug("rand = "+rand);
-
+		
 		if (rand == 1){
 			System.out.println("Player 2 begin !");
 			player2.generateHand();
