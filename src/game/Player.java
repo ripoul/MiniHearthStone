@@ -16,6 +16,7 @@ public class Player {
 	private int mana_max;
 	private Hero hero;
 	private Player ennemy_player;
+	private boolean used_hero_power;
 	
 	public Player(String name, Hero hero) {
 		super();
@@ -24,13 +25,18 @@ public class Player {
 		this.board = new Board(hero);
 		this.name = name;
 		this.mana = 0;
+		this.used_hero_power = false;
 	}
 	
 	public void useHeroPower(){
 		if (mana < 2) {
 			System.out.println("Not enough mana");
+		}
+		else if (used_hero_power == true){
+			System.out.println("Hero power already used this turn");
 		}else{
 			hero.useHeroPower();
+			used_hero_power = true;
 		}
 	}
 	
