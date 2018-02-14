@@ -1,5 +1,6 @@
 package hero;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,6 +17,11 @@ public class Warrior extends Hero {
 	public void useHeroPower() {
 		int current_armor = this.getArmor();
 		this.setArmor(current_armor + 2);
+	}
+	
+	@Override
+	public ArrayList<String> getPlayable_cards() {
+		return playable_cards;
 	}
 
 }

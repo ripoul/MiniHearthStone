@@ -18,7 +18,6 @@ public abstract class Hero implements TargetableEntity {
 																			   "YetiNoroit"));
 	
 	public Hero(int armor, int currentHealth, int healthMax, String name) {
-		super();
 		this.armor = armor;
 		this.currentHealth = currentHealth;
 		this.healthMax = healthMax;

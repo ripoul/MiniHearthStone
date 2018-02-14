@@ -44,5 +44,10 @@ public class Mage extends Hero {
 			h.takeDamage(1);
 		}
 	}
+	
+	@Override
+	public ArrayList<String> getPlayable_cards() {
+		return playable_cards;
+	}
 
 }

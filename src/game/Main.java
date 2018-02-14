@@ -1,11 +1,9 @@
 package game;
 
 import java.util.ArrayList;
-import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.Scanner;
 
-import card.Card;
 import hero.Hero;
 import hero.Mage;
 import hero.Paladin;

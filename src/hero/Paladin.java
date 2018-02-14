@@ -1,5 +1,6 @@
 package hero;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,6 +20,11 @@ public class Paladin extends Hero {
 	public void useHeroPower() {
 		Minion m = RecrueDeLaMainDArgent.createRecrueDeLaMainDArgent();
 		m.summon();
+	}
+	
+	@Override
+	public ArrayList<String> getPlayable_cards() {
+		return playable_cards;
 	}
 
 }

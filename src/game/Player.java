@@ -18,6 +18,7 @@ public class Player {
 	
 	public Player(String name, Hero hero) {
 		super();
+		this.hero = hero;
 		this.hand = new ArrayList<Card>();
 		this.board = new Board(hero);
 		this.name = name;
