@@ -8,7 +8,8 @@ public abstract class MinionDecorator extends Minion{
   protected Minion m;
 	
   public MinionDecorator(Minion m) {
-		super(m);
+	  	super(m);
+		this.m = m;
   }
   
   public void attack (TargetableEntity target) {

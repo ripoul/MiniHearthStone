@@ -48,7 +48,6 @@ public class Main {
 		while (end_turn == false){
 			Scanner reader = new Scanner(System.in);
 			n = reader.nextInt();
-			reader.close();
 			switch(n){
 			case 1:
 				player.getBoard().displayMinionAsList();
@@ -58,8 +57,7 @@ public class Main {
 				player.displayHand();
 				try {
 					Scanner reader1 = new Scanner(System.in);
-					n = reader1.nextInt();
-					reader1.close();
+					n = reader.nextInt();
 					// TO DO
 				}catch(IndexOutOfBoundsException e){
 					//TO DO
@@ -71,6 +69,7 @@ public class Main {
 				end_turn = true;
 				break;
 			}
+			reader.close();
 		}
 	}
 
@@ -104,7 +103,6 @@ public class Main {
 		while (n != 1 && n!= 2 && n != 3){
 			n = reader.nextInt();
 		}
-		reader.close();
 		switch(n){
 		case 1:
 			player_2_hero = new Mage();
@@ -126,14 +124,14 @@ public class Main {
 		int rand = rn.nextInt() % 2;
 		
 		if (rand == 1){
-			System.out.println("Player 2 commence !");
+			System.out.println("Player 2 begin !");
 			player2.generateHand();
 			player1.generateHand();
 			player1.draw();
 			players.add(player2);
 			players.add(player1);
 		}else if (rand == 0){
-			System.out.println("Player 1 commence !");
+			System.out.println("Player 1 begin !");
 			player1.generateHand();
 			player2.generateHand();
 			player2.draw();

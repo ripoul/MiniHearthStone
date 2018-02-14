@@ -11,7 +11,8 @@ public abstract class Spell extends Card {
   
   public Spell(String name, int manaCost) {
 		super(name, manaCost);
-		// TODO Auto-generated constructor stub
+		this.manaCost = manaCost;
+		this.name = name;
   }
   
   public abstract void cast();

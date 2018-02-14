@@ -25,7 +25,7 @@ public class CardFactory {
 	static {
 		available_card_map.put("SanglierBrocheroc", SanglierBrocheroc.createSanglierBrocheroc());
 		available_card_map.put("ChevaucheurDeLoup", ChevaucheurDeLoup.createChevaucheurDeLoup());
-		available_card_map.put("SoldatDuCompteDeLOr", SoldatDuComteDeLOr.createSoldatDuComteDeLOr());
+		available_card_map.put("SoldatDuComteDeLOr", SoldatDuComteDeLOr.createSoldatDuComteDeLOr());
 		available_card_map.put("ChefDeRaid", ChefDeRaid.createChefDeRaid());
 		available_card_map.put("YetiNoroit", YetiNoroit.createYetiNoroit());
 		available_card_map.put("AvocatCommisDOffice", AvocatCommisDOffice.createAvocatCommisDOffice());

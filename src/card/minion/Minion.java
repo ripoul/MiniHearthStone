@@ -20,6 +20,8 @@ public abstract class Minion extends Card implements TargetableEntity{
 	
 	public Minion (String name, int damage, int health, int manaCost) {
 		super(name, manaCost);
+		this.name = name;
+		this.manaCost = manaCost;
 	    this.damage = damage;
 	    this.health = health;
 	    this.state = new MinionSleepState(this);
@@ -34,9 +36,13 @@ public abstract class Minion extends Card implements TargetableEntity{
 	}
 	
 	public Minion (Minion m) {
-		super(m.name, m.damage);
+		super(m.name, m.manaCost);
+		this.name = m.name;
+		this.manaCost = m.manaCost;
+	    this.damage = m.damage;
 	    this.health = m.health;
-	    this.manaCost = m.manaCost;
+	    this.state = new MinionSleepState(this);
+	    this.should_be_attacked = false;
 	}
 	
 	@Override
@@ -125,7 +131,7 @@ public abstract class Minion extends Card implements TargetableEntity{
 
 	@Override
 	public String toString() {
-		return "Minion [name=" + name + ", damage=" + damage + ", health=" + health + ", manaCost=" + manaCost
+		return "Minion [name=" + this.name + ", damage=" + damage + ", health=" + health + ", manaCost=" + this.manaCost
 				+ ", state=" + state + "]";
 	}  
 	

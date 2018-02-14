@@ -45,7 +45,9 @@ public class Player {
 	public void draw(){
 		Random rand = new Random();
 		String str_card = this.hero.getPlayable_cards().get(rand.nextInt(hero.getPlayable_cards().size()));
-		hand.add(CardFactory.getCard(str_card));
+		Card new_card = CardFactory.getCard(str_card);
+		new_card.setPlayer(this);
+		hand.add(new_card);
 	}
 	
 	public void displayHand(){
