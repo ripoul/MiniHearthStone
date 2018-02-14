@@ -16,12 +16,14 @@ public abstract class Minion extends Card implements TargetableEntity{
 	private int manaCost;
 	private MinionState state;
 	private Player player;
+	private boolean should_be_attacked;
 	
 	public Minion (String name, int damage, int health, int manaCost) {
 		super(name, manaCost);
 	    this.damage = damage;
 	    this.health = health;
 	    this.state = new MinionSleepState(this);
+	    this.should_be_attacked = false;
 	}
 	
 	public void takeDamage(int damage){
@@ -54,7 +56,7 @@ public abstract class Minion extends Card implements TargetableEntity{
 	}
 	
 	public void attack(TargetableEntity target){
-		
+		target.takeDamage(damage);
 	}
 
 	public String getName() {
@@ -103,6 +105,22 @@ public abstract class Minion extends Card implements TargetableEntity{
 
 	public void setPlayer(Player player) {
 		this.player = player;
+	}
+	
+	public int getManaCost() {
+		return manaCost;
+	}
+
+	public void setManaCost(int manaCost) {
+		this.manaCost = manaCost;
+	}
+
+	public boolean isShould_be_attacked() {
+		return should_be_attacked;
+	}
+
+	public void setShould_be_attacked(boolean should_be_attacked) {
+		this.should_be_attacked = should_be_attacked;
 	}
 
 	@Override

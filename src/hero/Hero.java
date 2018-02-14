@@ -81,5 +81,9 @@ public abstract class Hero implements TargetableEntity {
 	public void setPlayer(Player player) {
 		this.player = player;
 	}
+	
+	public void heal(int heal){
+		this.setCurrentHealth(currentHealth + heal);
+	}
 		
 }
