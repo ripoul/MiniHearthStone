@@ -2,6 +2,14 @@ package game;
 
 import java.util.Scanner;
 
+/**
+ * 
+ * @author gguillet lbrisjules
+ * 
+ * Concrete object Minion AvocatCommisDOffice
+ *
+ */
+
 public abstract class Affichage {
     private static Scanner scanner;
 

@@ -6,6 +6,14 @@ import game.Player;
 import mechanics.TargetableEntity;
 import state.MinionState;
 
+/**
+ * 
+ * @author gguillet lbrisjules
+ * 
+ * Concrete decorator which give a leech on life while attacking to the decorate minion
+ *
+ */
+
 public class MinionLifeLeechDecorator extends MinionDecorator {
 
 	public MinionLifeLeechDecorator(Minion m) {
@@ -51,11 +59,6 @@ public class MinionLifeLeechDecorator extends MinionDecorator {
     @Override
 	public int getHealth() {
 		return m.getHealth();
-	}
-	
-	@Override
-	public int getMana() {
-		return m.getMana();
 	}
 	
 	@Override

@@ -6,34 +6,42 @@ import game.Player;
 import mechanics.TargetableEntity;
 import state.MinionState;
 
+/**
+ * 
+ * @author gguillet lbrisjules
+ * 
+ * Concrete decorator which give taunt to the decorate minion
+ *
+ */
+
 public class MinionTauntDecorator extends MinionDecorator {
 
-  public MinionTauntDecorator (Minion m) {
-	  super(m);
-	  m.setShould_be_attacked(true);
-  }
+	public MinionTauntDecorator (Minion m) {
+		super(m);
+		m.setShould_be_attacked(true);
+  	}
   
-  @Override
-  public void attack(TargetableEntity target){
+  	@Override
+  	public void attack(TargetableEntity target){
 		m.attack(target);
 	}
 
-  @Override
-  public void takeDamage(int damage){
+  	@Override
+  	public void takeDamage(int damage){
 		m.takeDamage(damage);
 	}
 
-  @Override
-  public void use() {
+  	@Override
+  	public void use() {
 	    m.use();
-  }
+  	}
   
-  @Override
-  public void summon() {
+  	@Override
+  	public void summon() {
 		m.summon();
 	}
 	
-  @Override
+  	@Override
 	public void remove() {
 		m.remove();
 	}
@@ -51,11 +59,6 @@ public class MinionTauntDecorator extends MinionDecorator {
 	@Override
 	public int getHealth() {
 		return m.getHealth();
-	}
-	
-	@Override
-	public int getMana() {
-		return m.getMana();
 	}
 	
 	@Override

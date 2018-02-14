@@ -18,10 +18,14 @@ import card.spell.MaitriseDeBlocage;
 import card.spell.Metamorphose;
 import card.spell.Tourbillon;
 
+
+
 public class CardFactory {
 
+	//HashMap which will contain an association String, Card to represent all cards
 	private static final Map<String, Card> available_card_map = new HashMap<String, Card>();
 	
+	//Define all available card in the game
 	static {
 		available_card_map.put("SanglierBrocheroc", SanglierBrocheroc.createSanglierBrocheroc());
 		available_card_map.put("ChevaucheurDeLoup", ChevaucheurDeLoup.createChevaucheurDeLoup());
@@ -41,6 +45,12 @@ public class CardFactory {
 	}
 	
 	
+	/**
+	 * 
+	 * @param name of the card
+	 * @return Card
+	 * 
+	 */
 	public static Card getCard(String name){
 		return available_card_map.get(name);
 	}
