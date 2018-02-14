@@ -2,7 +2,6 @@ package game;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 import hero.Hero;
 import hero.Mage;
 import hero.Paladin;
@@ -146,5 +145,6 @@ public class Main {
 
 	public static void debug(String s){
 		System.out.println("-----------------------------DEBUG---------------------------------\n"+ s);
+		System.out.println("---------------------------FIN DEBUG-------------------------------");
 	}
 }
