@@ -3,6 +3,7 @@ card.minion
 card.minion.decorator
 card.spell
 game
+game.Observer
 hero
 mechanics
 state
