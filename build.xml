@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="MiniHeauthstone" default="main" basedir=".">
+    <property name="build.dir" value="./bin/"/>
+    <property name="class.main" value="game.Main"/>
+
+    <path id="cp" path="${build.dir}"/>
+
+    <target name="clean" description="Suppression des répertoires et fichiers générés">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="compile" description="Compilation du projet projet">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="./" destdir="${build.dir}" classpathref="cp"/>
+    </target>
+
+    <target name="run" depends="compile" description="(compile et) execute le projet">
+        <java classname="${class.main}" fork="true">
+            <classpath refid="cp"/>
+        </java>
+    </target>
+</project>
