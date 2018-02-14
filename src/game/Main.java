@@ -2,7 +2,6 @@ package game;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 import hero.Hero;
 import hero.Mage;
 import hero.Paladin;
@@ -41,19 +40,21 @@ public class Main {
 
 	private static void turn(Player player) {
 		player.gainMana();
+		player.setMana(player.getMana_max());
 		player.draw();
-		System.out.println("1 - Display your infos\n2 - Play a card\n3 - Use hero power\n4 - End your turn\n-1 - Return back to this choice list");
 		int n;
 
 
 		boolean end_turn = false;
 		while (!end_turn){
+			
+			System.out.println("1 - Display your infos\n2 - Play a card\n3 - Use hero power\n4 - End your turn\n-1 - Return back to this choice list");
 
 			n = affichage.lireInt();
 			switch(n){
 				case 1:
 					player.getBoard().displayMinionAsList();
-					player.displayMyHero();
+					player.displayMyInfos();
 					break;
 				case 2:
 					player.displayHand();
