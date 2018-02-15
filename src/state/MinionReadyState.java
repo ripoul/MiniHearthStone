@@ -22,12 +22,13 @@ public class MinionReadyState implements MinionState {
 	 */
 	public MinionReadyState(Minion minion) {
 		super();
-		this.minion = minion;
+		minion.setState(this);
 	}
 	
 	@Override
 	public void attack() {
 		System.out.println("attacking...");
+		// MAYBE TO DELETE
 	}
 
 }

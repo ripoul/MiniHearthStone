@@ -18,6 +18,7 @@ public class MinionChargeDecorator extends MinionDecorator {
 
 	public MinionChargeDecorator(Minion m) {
 		super(m);
+		System.out.println("ici");
 		setState(new MinionReadyState(m));
 	}
   
