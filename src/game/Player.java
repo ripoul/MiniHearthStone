@@ -13,7 +13,7 @@ public class Player {
 	private Board board;
 	private String name;
 	private int mana;
-	private int mana_max;
+	private static int mana_max = 10;
 	private Hero hero;
 	private Player ennemy_player;
 	private boolean used_hero_power;
@@ -63,7 +63,7 @@ public class Player {
 	public void draw(){
 		Random rand = new Random();
 		String str_card = this.hero.getPlayable_cards().get(rand.nextInt(hero.getPlayable_cards().size()));
-		Card new_card = CardFactory.getCard(str_card);
+		Card new_card = this.getHero().getCards().getCard(str_card);
 		new_card.setPlayer(this);
 		hand.add(new_card);
 	}
@@ -75,6 +75,10 @@ public class Player {
 			System.out.println("Index "+i+"\n"+card.toString());
 			i++;
 		}
+	}
+
+	public void displayBoard(){
+		board.displayMinionAsList();
 	}
 	
 	public ArrayList<Card> getHand() {
@@ -127,10 +131,6 @@ public class Player {
 	
 	public int getMana_max() {
 		return mana_max;
-	}
-
-	public void setMana_max(int mana_max) {
-		this.mana_max = mana_max;
 	}
 
 	public void displayMyHero () {

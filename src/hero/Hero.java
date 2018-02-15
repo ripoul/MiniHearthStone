@@ -3,6 +3,8 @@ package hero;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import card.Card;
+import card.CardFactory;
 import game.Player;
 import mechanics.TargetableEntity;
 
@@ -27,7 +29,7 @@ public abstract class Hero implements TargetableEntity {
 	public void takeDamage(int damage){
 		currentHealth = currentHealth-damage;
 		if (currentHealth <= 0){
-			//Call sur le observer
+			//TODO Call sur le observer
 		}
 	}
 	
@@ -84,5 +86,7 @@ public abstract class Hero implements TargetableEntity {
 	public void heal(int heal){
 		this.setCurrentHealth(currentHealth + heal);
 	}
+
+	public abstract CardFactory getCards();
 		
 }

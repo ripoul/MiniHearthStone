@@ -4,16 +4,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-
+import card.*;
 import card.minion.Minion;
 
 public class Mage extends Hero {
 	
 	private static List<String> playable_cards_mage = Arrays.asList("ExplosionDesArcanes", "ImageMiroir", "Metamorphose");
+	private CardFactory cards;
 
 	public Mage() {
 		super(0, 30, 30, "Mage");
 		playable_cards.addAll(playable_cards_mage);
+		cards = new CardFactoryMage();
 	}
 
 	@Override
@@ -57,4 +59,8 @@ public class Mage extends Hero {
 		return playable_cards;
 	}
 
+	@Override
+	public CardFactory getCards() {
+		return cards;
+	}
 }

@@ -2,6 +2,9 @@ package game;
 
 import java.util.ArrayList;
 import java.util.Random;
+
+import card.Card;
+import card.minion.Minion;
 import hero.Hero;
 import hero.Mage;
 import hero.Paladin;
@@ -46,7 +49,7 @@ public class Main {
 		boolean end_turn = false;
 		while (!end_turn){
 			
-			System.out.println("1 - Display your infos\n2 - Play a card\n3 - Use hero power\n4 - End your turn\n-1 - Return back to this choice list");
+			System.out.println("1 - Display your infos\n2 - Play a card\n3 - Use hero power\n4 - End your turn\n5 - use a card");
 
 			n = Affichage.lireInt();
 			switch(n){
@@ -58,9 +61,12 @@ public class Main {
 					player.displayHand();
 					try {
 						n = Affichage.lireInt();
-						// TO DO
+						ArrayList<Minion> board = player.getBoard().getMinions();
+						Card minion = player.getHand().get(n);
+						player.playCard(minion);
+
 					}catch(IndexOutOfBoundsException e){
-						//TO DO
+						//todo
 					}
 					break;
 				case 3:
@@ -70,6 +76,36 @@ public class Main {
 				case 4:
 					end_turn = true;
 					break;
+				case 5:
+					/* use a card */
+					player.displayBoard();
+					try{
+						n = Affichage.lireInt();
+						Minion minion = player.getBoard().getMinions().get(n);
+						Player adv = player.getEnnemy_player();
+						ArrayList<Minion> advMinion = adv.getBoard().getMinions();
+						ArrayList<Minion> advMinionToDisplay = new ArrayList<>();
+						for (Minion minion1 : advMinion) {
+							if (minion1.isShould_be_attacked()){
+								advMinionToDisplay.add(minion1);
+							}
+						}
+
+						if (advMinionToDisplay.isEmpty()){
+							adv.displayBoard();
+							n = Affichage.lireInt();
+							minion.attack(adv.getBoard().minions.get(n));
+						}else{
+							for (Minion minion1 : advMinionToDisplay) {
+								minion1.toString();
+							}
+							n=Affichage.lireInt();
+							minion.attack(advMinionToDisplay.get(n));
+						}
+
+					}catch (Exception e){
+						e.printStackTrace();
+					}
 			}
 		}
 
