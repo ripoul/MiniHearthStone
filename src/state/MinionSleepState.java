@@ -1,6 +1,7 @@
 package state;
 
 import card.minion.Minion;
+import mechanics.TargetableEntity;
 
 /**
  * 
@@ -22,11 +23,11 @@ public class MinionSleepState implements MinionState {
 	 */
 	public MinionSleepState(Minion minion) {
 		super();
-		minion.setState(this);;
+		this.minion = minion;
 	}
 
 	@Override
-	public void attack() {
+	public void attack(TargetableEntity target) {
 		System.out.println("can't attack wait next turn");
 	}
 

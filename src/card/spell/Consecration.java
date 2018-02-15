@@ -36,6 +36,7 @@ public class Consecration extends Spell {
 		 for (Minion minion : ennemy_minions) {
 			 minion.takeDamage(2);
 		 }
+		 getPlayer().getEnnemy_player().getHero().takeDamage(2);
 	}
 	
 	/**

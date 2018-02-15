@@ -1,6 +1,7 @@
 package state;
 
 import card.minion.Minion;
+import mechanics.TargetableEntity;
 
 /**
  * 
@@ -22,13 +23,13 @@ public class MinionReadyState implements MinionState {
 	 */
 	public MinionReadyState(Minion minion) {
 		super();
-		minion.setState(this);
+		this.minion = minion;
 	}
-	
+
 	@Override
-	public void attack() {
+	public void attack(TargetableEntity target) {
 		System.out.println("attacking...");
-		// MAYBE TO DELETE
+		target.takeDamage(minion.getDamage());
 	}
 
 }

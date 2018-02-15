@@ -1,5 +1,7 @@
 package state;
 
+import mechanics.TargetableEntity;
+
 /**
  * 
  * @author gguillet lbrisjules
@@ -10,6 +12,6 @@ package state;
 
 public interface MinionState {
 
-	public void attack();
+	public void attack(TargetableEntity target);
   
 }

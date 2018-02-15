@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 import card.*;
 import card.minion.Minion;
+import game.Observer.Observer;
 
 /**
  * 
@@ -18,7 +19,6 @@ import card.minion.Minion;
 public class Mage extends Hero {
 	private CardFactory cards;
 	private static List<String> playable_cards_mage = Arrays.asList("ExplosionDesArcanes", "ImageMiroir", "Metamorphose"); // correspond to the special card of the mage
-
 
 	/**
 	 * Mage constructor
@@ -81,7 +81,6 @@ public class Mage extends Hero {
 		return playable_cards;
 	}
 
-	@Override
 	public CardFactory getCards() {
 		return cards;
 	}

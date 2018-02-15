@@ -5,6 +5,8 @@ import java.util.Arrays;
 
 import card.Card;
 import card.CardFactory;
+import game.Observer.Observer;
+import game.Observer.Sujet;
 import game.Player;
 import mechanics.TargetableEntity;
 
@@ -16,7 +18,7 @@ import mechanics.TargetableEntity;
  *
  */
 
-public abstract class Hero implements TargetableEntity {
+public abstract class Hero implements TargetableEntity, Sujet {
 
 	private int armor;
 	private int currentHealth;
@@ -26,6 +28,7 @@ public abstract class Hero implements TargetableEntity {
 	protected ArrayList<String> playable_cards = new ArrayList<>(Arrays.asList("ChefDeRaid", "ChevaucheurDeLoup",
 																			   "SanglierBrocheroc", "SoldatDuComteDeLOr",
 																			   "YetiNoroit"));  //List of string which correspond to all common cards
+	protected ArrayList<Observer> obs;
 	
 	/**
 	 * @param armor armor of the hero
@@ -39,6 +42,7 @@ public abstract class Hero implements TargetableEntity {
 		this.currentHealth = currentHealth;
 		this.healthMax = healthMax;
 		this.name = name;
+		this.obs = new ArrayList<>();
 	}
 	
 	/**
@@ -47,9 +51,7 @@ public abstract class Hero implements TargetableEntity {
 	 */
 	public void takeDamage(int damage){
 		currentHealth = currentHealth-damage;
-		if (currentHealth <= 0){
-			//TODO Call sur le observer
-		}
+		notifierObs();
 	}
 	
 	/**
@@ -151,5 +153,18 @@ public abstract class Hero implements TargetableEntity {
 	}
 
 	public abstract CardFactory getCards();
+
+
+	public void enregistrerObs(Observer o){
+		obs.add(o);
+	}
+	public void supprierObs(Observer o){
+		obs.remove(o);
+	}
+	public void notifierObs(){
+		for (Observer ob : obs) {
+			ob.actualiser(this.getCurrentHealth());
+		}
+	}
 		
 }

@@ -1,6 +1,7 @@
 package card.minion.decorator;
 
 import card.minion.Minion;
+import game.Main;
 import mechanics.TargetableEntity;
 
 /**
@@ -16,8 +17,8 @@ public abstract class MinionDecorator extends Minion{
   protected Minion m;
 	
   public MinionDecorator(Minion m) {
-	  	super(m);
-		this.m = m;
+      super(m);
+      this.m = m;
   }
   
   public void attack (TargetableEntity target) {

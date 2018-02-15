@@ -78,6 +78,7 @@ public class Player {
 	 */
 	public void playCard(Card card){
 		if (mana > card.getManaCost()){
+			card.setPlayer(this);
 			card.use();
 			hand.remove(card);
 		}

@@ -8,6 +8,7 @@ import card.CardFactory;
 import card.CardFactoryPaladin;
 import card.minion.Minion;
 import card.minion.RecrueDeLaMainDArgent;
+import game.Observer.Observer;
 
 public class Paladin extends Hero {
 	private CardFactory cards;

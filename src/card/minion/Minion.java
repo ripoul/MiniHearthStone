@@ -70,8 +70,8 @@ public abstract class Minion extends Card implements TargetableEntity{
 		this.manaCost = m.manaCost;
 	    this.damage = m.damage;
 	    this.health = m.health;
-	    this.state = new MinionSleepState(this);
 	    this.should_be_attacked = false;
+		this.state = new MinionSleepState(this);
 	}
 	
 	/**
@@ -114,13 +114,8 @@ public abstract class Minion extends Card implements TargetableEntity{
 	 * 
 	 */
 	public void attack(TargetableEntity target){
-		state.attack();
-		if (state instanceof MinionReadyState){
-			target.takeDamage(damage);
-			this.setState(new MinionSleepState(this));
-		}else{
-			System.out.println(this.name+" can't attack this turn wait next turn");
-		}
+		state.attack(target);
+		this.setState(new MinionSleepState(this));
 	}
 
 	/**

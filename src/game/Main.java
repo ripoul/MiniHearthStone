@@ -5,10 +5,12 @@ import java.util.Random;
 
 import card.Card;
 import card.minion.Minion;
+import game.Observer.HeroLifeObserver;
 import hero.Hero;
 import hero.Mage;
 import hero.Paladin;
 import hero.Warrior;
+import mechanics.TargetableEntity;
 
 public class Main {
 	public static void main(String[] args) {
@@ -21,7 +23,7 @@ public class Main {
 		first_player = players.get(0);
 		second_player = players.get(1);
 
-		while ((first_player.getHero().getCurrentHealth() > 0) || (second_player.getHero().getCurrentHealth() > 0)){
+		while (true){
 			firstPlayerTurn(first_player);
 			secondPlayerTurn(second_player);
 		}
@@ -88,6 +90,7 @@ public class Main {
 						Player adv = player.getEnnemy_player();
 						ArrayList<Minion> advMinion = adv.getBoard().getMinions();
 						ArrayList<Minion> advMinionToDisplay = new ArrayList<>();
+
 						for (Minion minion1 : advMinion) {
 							if (minion1.isShould_be_attacked()){
 								advMinionToDisplay.add(minion1);
@@ -95,12 +98,18 @@ public class Main {
 						}
 
 						if (advMinionToDisplay.isEmpty()){
-							adv.displayBoard();
+							System.out.println("1: attaque hero\n2: attaque minion");
 							n = Affichage.lireInt();
-							minion.attack(adv.getBoard().minions.get(n));
+							if(n==1){
+								minion.attack(player.getEnnemy_player().getHero());
+							}else{
+								adv.displayBoard();
+								n = Affichage.lireInt();
+								minion.attack(adv.getBoard().minions.get(n));
+							}
 						}else{
 							for (Minion minion1 : advMinionToDisplay) {
-								minion1.toString();
+								System.out.println(minion1.toString());
 							}
 							n=Affichage.lireInt();
 							minion.attack(advMinionToDisplay.get(n));
@@ -135,6 +144,8 @@ public class Main {
 				player_1_hero = new Warrior();
 				break;
 		}
+
+
 		System.out.println("Player 2 please select a hero in the list bellow :");
 		System.out.println("Type 1 for Mage, type 2 for Paladin & type 3 for Warrior");
 
@@ -160,6 +171,12 @@ public class Main {
 		
 		player1.setEnnemy_player(player2);
 		player2.setEnnemy_player(player1);
+
+		HeroLifeObserver obs1 = new HeroLifeObserver(player_1_hero);
+		HeroLifeObserver obs2 = new HeroLifeObserver(player_2_hero);
+
+		player1.getHero().enregistrerObs(obs1);
+		player2.getHero().enregistrerObs(obs2);
 
 		ArrayList<Player> players = new ArrayList<Player>();
 
