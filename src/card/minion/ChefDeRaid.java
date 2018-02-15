@@ -35,6 +35,7 @@ public class ChefDeRaid extends Minion {
     for (Minion m : getPlayer().getBoard().getMinions()) {
     	m.setDamage(m.getDamage() +1);
     }
+    super.summon();
   }
 
   /**
@@ -47,7 +48,8 @@ public class ChefDeRaid extends Minion {
   public void remove() {
 	  for (Minion m : getPlayer().getBoard().getMinions()) {
 	    	m.setDamage(m.getDamage() -1);
-	    }
+	  }
+	  super.remove();
   }
 
 }
