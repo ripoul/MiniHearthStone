@@ -19,5 +19,5 @@ import card.spell.Metamorphose;
 import card.spell.Tourbillon;
 
 public interface CardFactory {
-
+    public Card getCard(String s);
 }
