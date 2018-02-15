@@ -61,9 +61,9 @@ public class Board {
 	public void displayMinionAsList() {
 		System.out.println("My Board");
 		System.out.println("minion index | minion name | minion attack | minion life");
-		if (minions.size() != 0){
-			for (int i = 0; i< minions.size(); i++) {
-				Minion minion = minions.get(i);
+		if (this.getMinions().size() != 0){
+			for (int i = 0; i< this.getMinions().size(); i++) {
+				Minion minion = this.getMinions().get(i);
 				System.out.println(i+" | "+minion.getName()+" | "+minion.getDamage()+" | "+minion.getHealth());
 			}			
 		}else{

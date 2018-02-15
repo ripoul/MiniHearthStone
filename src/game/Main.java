@@ -31,11 +31,13 @@ public class Main {
 	private static void secondPlayerTurn(Player second_player) {
 		System.out.println("It's your turn Player 2");
 		turn(second_player);
+		second_player.wakeUpBoard();
 	}
 
 	private static void firstPlayerTurn(Player first_player) {
 		System.out.println("It's your turn Player 1");
 		turn(first_player);
+		first_player.wakeUpBoard();
 
 	}
 

@@ -114,8 +114,10 @@ public abstract class Minion extends Card implements TargetableEntity{
 	 * 
 	 */
 	public void attack(TargetableEntity target){
-		if (state.getClass().equals(MinionReadyState.class)){
+		state.attack();
+		if (state instanceof MinionReadyState){
 			target.takeDamage(damage);
+			this.setState(new MinionSleepState(this));
 		}else{
 			System.out.println(this.name+" can't attack this turn wait next turn");
 		}

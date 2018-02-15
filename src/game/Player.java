@@ -273,10 +273,8 @@ public class Player {
 	}
 	
 	public void wakeUpBoard() {
-		for (Minion minion : getBoard().minions){
-			if (!minion.getState().getClass().equals(MinionReadyState.class)){
-				minion = new MinionChargeDecorator(minion);
-			}
+		for (Minion minion : getBoard().getMinions()){
+			minion.setState(new MinionReadyState(minion));
 		}
 	}
 	
