@@ -22,7 +22,7 @@ public class MinionSleepState implements MinionState {
 	 */
 	public MinionSleepState(Minion minion) {
 		super();
-		this.minion = minion;
+		minion.setState(this);;
 	}
 
 	@Override
