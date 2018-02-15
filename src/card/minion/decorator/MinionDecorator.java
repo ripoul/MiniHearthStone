@@ -3,6 +3,14 @@ package card.minion.decorator;
 import card.minion.Minion;
 import mechanics.TargetableEntity;
 
+/**
+ * 
+ * @author gguillet lbrisjules
+ * 
+ * Abstract decorator for a minion
+ *
+ */
+
 public abstract class MinionDecorator extends Minion{
 
   protected Minion m;

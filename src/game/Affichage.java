@@ -2,7 +2,16 @@ package game;
 
 import java.util.Scanner;
 
+/**
+ * 
+ * @author gguillet lbrisjules
+ * 
+ * Abstract class Affichage
+ *
+ */
+
 public abstract class Affichage {
+	
     private static Scanner scanner;
 
     public static int lireInt() {

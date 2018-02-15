@@ -6,25 +6,33 @@ import mechanics.TargetableEntity;
 import state.MinionReadyState;
 import state.MinionState;
 
+/**
+ * 
+ * @author gguillet lbrisjules
+ * 
+ * Concrete decorator which give ready state to the decorate minion
+ *
+ */
+
 public class MinionChargeDecorator extends MinionDecorator {
 
-  public MinionChargeDecorator(Minion m) {
+	public MinionChargeDecorator(Minion m) {
 		super(m);
 		setState(new MinionReadyState(m));
 	}
   
-  @Override
-  public void takeDamage(int damage){
+  	@Override
+  	public void takeDamage(int damage){
 		m.takeDamage(damage);
 	}
   
-  @Override
-  public void use() {
-	  m.use();
-  }
+  	@Override
+  	public void use() {
+  		m.use();
+  	}
   
-  @Override
-  public void summon() {
+  	@Override
+  	public void summon() {
 		m.summon();
 	}
 	
@@ -51,11 +59,6 @@ public class MinionChargeDecorator extends MinionDecorator {
   	@Override
 	public int getHealth() {
 		return m.getHealth();
-	}
-	
-  	@Override
-	public int getMana() {
-		return m.getMana();
 	}
 	
   	@Override

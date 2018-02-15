@@ -6,12 +6,33 @@ import card.minion.Minion;
 import card.minion.Mouton;
 import game.Affichage;
 
+/**
+ * 
+ * @author gguillet lbrisjules
+ * 
+ * Concrete Spell object Metamorphose
+ *
+ */
+
 public class Metamorphose extends Spell {
 
+	/**
+	 * 
+	 *Metamorphose constructor
+	 *
+	 */
 	public Metamorphose() {
 		super("Metamorphose", 4);
 	}
 
+	/**
+	 * 
+	 * Override of the cast method of Spell
+	 * Ask the player to select a target minion on the enemy board
+	 * remove the targeted minion and replace him by a sheep minion
+	 * If there is no minions on the enemy board the spell is canceled
+	 *
+	 */
 	@Override
 	public void cast() {
 		getPlayer().getBoard().displayMinionAsList();
@@ -33,6 +54,9 @@ public class Metamorphose extends Spell {
 		}
 	}
 	
+	/**
+	* @return a new Metamorphose
+	*/
 	public static Spell createMetamorphose(){
 		  return new Metamorphose();
 	}

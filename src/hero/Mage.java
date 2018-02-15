@@ -7,17 +7,36 @@ import java.util.Scanner;
 import card.*;
 import card.minion.Minion;
 
-public class Mage extends Hero {
-	
-	private static List<String> playable_cards_mage = Arrays.asList("ExplosionDesArcanes", "ImageMiroir", "Metamorphose");
-	private CardFactory cards;
+/**
+ * 
+ * @author gguillet lbrisjules
+ * 
+ * Concrete class Hero Mage
+ *
+ */
 
+public class Mage extends Hero {
+	private CardFactory cards;
+	private static List<String> playable_cards_mage = Arrays.asList("ExplosionDesArcanes", "ImageMiroir", "Metamorphose"); // correspond to the special card of the mage
+
+
+	/**
+	 * Mage constructor
+	 * Add all special card of the Mage to his available cards
+	 */
 	public Mage() {
 		super(0, 30, 30, "Mage");
 		playable_cards.addAll(playable_cards_mage);
 		cards = new CardFactoryMage();
 	}
 
+	/**
+	 * Override the useHeroPower abstract method of hero
+	 * Ask the user for the target he want to damage
+	 * This target can be either the enemy hero or one of the enemy minion
+	 * If there is no minion on the enemy board the player is asked by default if he want to target the enemy hero
+	 * This action deal 1 damage to the target
+	 */
 	@Override
 	public void useHeroPower() {
 		System.out.println("Selectionner l'index de l'entite a attaquer");
@@ -30,7 +49,7 @@ public class Mage extends Hero {
 			}
 		}else{
 			getPlayer().getEnnemy_player().getBoard().displayMinionAsList();
-			getPlayer().displayEnnemyHero();
+			getPlayer().displayEnemyHero();
 			Minion m = null;
 			Hero h = null;
 			while(m == null || h == null) {
@@ -54,6 +73,9 @@ public class Mage extends Hero {
 		}
 	}
 	
+	/**
+	 * Override the getPlayable_cards method of hero
+	 */
 	@Override
 	public ArrayList<String> getPlayable_cards() {
 		return playable_cards;

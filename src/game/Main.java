@@ -75,6 +75,7 @@ public class Main {
 					break;
 				case 4:
 					end_turn = true;
+					player.wakeUpBoard();
 					break;
 				case 5:
 					/* use a card */

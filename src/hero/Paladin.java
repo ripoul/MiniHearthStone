@@ -10,16 +10,23 @@ import card.minion.Minion;
 import card.minion.RecrueDeLaMainDArgent;
 
 public class Paladin extends Hero {
-	
-	private static List<String> playable_cards_paladin = Arrays.asList("ChampionFrisselame", "BenedictionDePuissance", "Consecration");
 	private CardFactory cards;
+	private static List<String> playable_cards_paladin = Arrays.asList("ChampionFrisselame", "BenedictionDePuissance", "Consecration"); // correspond to the special card of the paladin
 
+	/**
+	 * Paladin constructor
+	 * Add all special card of the Paladin to his available cards
+	 */
 	public Paladin() {
 		super(0, 30, 30, "Paladin");
 		playable_cards.addAll(playable_cards_paladin);
 		cards = new CardFactoryPaladin();
 	}
 
+	/**
+	 * Override the useHeroPower abstract method of hero
+	 * Add one RecrueDeLaMainDArgent minion to the board of the player
+	 */
 	@Override
 	public void useHeroPower() {
 		Minion m = RecrueDeLaMainDArgent.createRecrueDeLaMainDArgent();
@@ -27,6 +34,9 @@ public class Paladin extends Hero {
 		m.summon();
 	}
 	
+	/**
+	 * Override the getPlayable_cards method of hero
+	 */
 	@Override
 	public ArrayList<String> getPlayable_cards() {
 		return playable_cards;

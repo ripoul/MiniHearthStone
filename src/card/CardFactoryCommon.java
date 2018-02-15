@@ -5,7 +5,6 @@ import card.minion.decorator.MinionChargeDecorator;
 import card.minion.decorator.MinionTauntDecorator;
 
 public class CardFactoryCommon implements CardFactory {
-    @Override
     public Card getCard(String name) {
         switch (name) {
             case "SanglierBrocheroc":

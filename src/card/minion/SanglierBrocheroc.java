@@ -1,13 +1,27 @@
 package card.minion;
 
+/**
+ * 
+ * @author gguillet lbrisjules
+ * 
+ * Concrete object Minion SanglierBrocheroc
+ *
+ */
+
 public class SanglierBrocheroc extends Minion {
 
-  public SanglierBrocheroc() {
-	  super("SanglierBrocheroc", 1, 1, 1);
-  }
+	 /**
+	 * SanglierBrocheroc constructor
+	 */
+	public SanglierBrocheroc() {
+		super("SanglierBrocheroc", 1, 1, 1);
+	}
 
-  public static Minion createSanglierBrocheroc(){
+	/**
+	* @return a new SanglierBrocheroc
+	*/
+	public static Minion createSanglierBrocheroc(){
 	  return new SanglierBrocheroc();
-  }
+	}
 
 }
