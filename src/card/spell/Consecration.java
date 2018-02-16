@@ -35,7 +35,13 @@ public class Consecration extends Spell {
 		 ArrayList<Minion> ennemy_minions = getPlayer().getEnnemy_player().getBoard().getMinions();
 
 		 for (int i =0; i<ennemy_minions.size();i++){
-			 ennemy_minions.get(i).takeDamage(2);
+			 Minion m = ennemy_minions.get(i);
+			 boolean b = m.getHealth()<=2;
+			 m.takeDamage(2);
+
+			 if (b){
+			 	i--;
+			 }
 		}
 		 getPlayer().getEnnemy_player().getHero().takeDamage(2);
 		 return true;

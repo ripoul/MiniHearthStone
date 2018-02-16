@@ -32,10 +32,16 @@ public class ExplosionDesArcanes extends Spell {
 	 */
 	@Override
 	public boolean cast() {
-		ArrayList<Minion> ennemy_minions = ((Player) getPlayer()).getEnnemy_player().getBoard().getMinions();
-		 for (Minion minion : ennemy_minions) {
-			 minion.takeDamage(1);
-		 }
+		ArrayList<Minion> ennemy_minions = getPlayer().getEnnemy_player().getBoard().getMinions();
+		for (int i=0;i<ennemy_minions.size();i++) {
+			Minion m = ennemy_minions.get(i);
+			boolean b = m.getHealth() <= 1;
+			m.takeDamage(1);
+
+			if (b) {
+				i--;
+			}
+		}
 		return true;
 	}
 }
