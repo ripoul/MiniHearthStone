@@ -86,7 +86,12 @@ public class Main {
 					player.displayBoard();
 					try{
 						n = Affichage.lireInt();
-						Minion minion = player.getBoard().getMinions().get(n);
+						Minion minion = null;
+						try {
+							minion = player.getBoard().getMinions().get(n);
+						}catch (IndexOutOfBoundsException e){
+							System.out.println("Invalid option");
+						}
 						Player adv = player.getEnnemy_player();
 						ArrayList<Minion> advMinion = adv.getBoard().getMinions();
 						ArrayList<Minion> advMinionToDisplay = new ArrayList<>();
@@ -96,23 +101,32 @@ public class Main {
 								advMinionToDisplay.add(minion1);
 							}
 						}
-
-						if (advMinionToDisplay.isEmpty()){
-							System.out.println("1: attaque hero\n2: attaque minion");
-							n = Affichage.lireInt();
-							if(n==1){
-								minion.attack(player.getEnnemy_player().getHero());
-							}else{
-								adv.displayBoard();
+						if (minion != null){
+							if (advMinionToDisplay.isEmpty()){
+								System.out.println("1: attaque hero\n2: attaque minion");
 								n = Affichage.lireInt();
-								minion.attack(adv.getBoard().minions.get(n));
+								if(n==1){
+									minion.attack(player.getEnnemy_player().getHero());
+								}else{
+									adv.displayBoard();
+									n = Affichage.lireInt();
+									try{
+										minion.attack(adv.getBoard().minions.get(n));
+									}catch (IndexOutOfBoundsException e){
+										System.out.println("Invalid option");
+									}
+								}
+							}else{
+								for (Minion minion1 : advMinionToDisplay) {
+									System.out.println(minion1.toString());
+								}
+								n=Affichage.lireInt();
+								try{
+									minion.attack(advMinionToDisplay.get(n));
+								}catch (IndexOutOfBoundsException e){
+									System.out.println("Invalid option");
+								}
 							}
-						}else{
-							for (Minion minion1 : advMinionToDisplay) {
-								System.out.println(minion1.toString());
-							}
-							n=Affichage.lireInt();
-							minion.attack(advMinionToDisplay.get(n));
 						}
 
 					}catch (Exception e){

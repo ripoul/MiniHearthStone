@@ -81,6 +81,8 @@ public class Player {
 			card.setPlayer(this);
 			card.use();
 			hand.remove(card);
+		}else{
+			System.out.println("Not enough mana !");
 		}
 	}
 	
