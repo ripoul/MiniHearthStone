@@ -5,7 +5,7 @@ import java.util.Random;
 import card.Card;
 import card.minion.Minion;
 import hero.Hero;
-import state.MinionReadyState;
+import card.minion.state.MinionReadyState;
 
 public class Player {
 

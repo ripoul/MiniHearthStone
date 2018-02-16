@@ -1,4 +1,4 @@
-package state;
+package card.minion.state;
 
 import card.minion.Minion;
 import mechanics.TargetableEntity;

@@ -3,7 +3,7 @@ package card.minion.decorator;
 import card.minion.Minion;
 import game.Player;
 import mechanics.TargetableEntity;
-import state.MinionState;
+import card.minion.state.*;
 
 /**
  * 

@@ -3,8 +3,8 @@ package card.minion;
 import card.Card;
 import game.Player;
 import mechanics.TargetableEntity;
-import state.MinionSleepState;
-import state.MinionState;
+import card.minion.state.MinionSleepState;
+import card.minion.state.MinionState;
 
 import java.util.ArrayList;
 

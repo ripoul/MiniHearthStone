@@ -3,8 +3,7 @@ package card.minion.decorator;
 import card.minion.Minion;
 import game.Player;
 import mechanics.TargetableEntity;
-import state.MinionReadyState;
-import state.MinionState;
+import card.minion.state.*;
 
 /**
  * 
@@ -20,8 +19,6 @@ public class MinionChargeDecorator extends MinionDecorator {
 		super(m);
 		m.setState(new MinionReadyState(m));
 	}
-
-
 	@Override
 	public void setPlayer(Player p){
 		m.setPlayer(p);
