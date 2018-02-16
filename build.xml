@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="MiniHeauthstone" default="main" basedir=".">
+<project name="MiniHeauthstone" default="run" basedir=".">
     <property name="build.dir" value="./bin/"/>
     <property name="class.main" value="game.Main"/>
 
