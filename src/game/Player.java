@@ -80,7 +80,7 @@ public class Player {
 		if (mana > card.getManaCost()){
 			card.setPlayer(this);
 			Boolean b = card.use();
-			if(!b){
+			if(b){
 				hand.remove(card);
 			}
 		}else{
