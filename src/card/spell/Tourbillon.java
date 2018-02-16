@@ -41,12 +41,4 @@ public class Tourbillon extends Spell {
 			 minion.takeDamage(1);
 		 }
 	}
-	
-	/**
-	 * @return a new Tourbillon
-	 */
-	public static Spell createTourbillon(){
-		  return new Tourbillon();
-	}
-
 }

@@ -18,13 +18,6 @@ public class ChefDeRaid extends Minion {
   }
 
   /**
-  * @return a new ChefDeRaid
-  */
-  public static Minion createChefDeRaid(){
-	return new ChefDeRaid();
-  }
-
-  /**
    * 
    * Override summon method of minion
    * Give +1 to the attack of all minions while placed on board

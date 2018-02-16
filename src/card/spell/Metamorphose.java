@@ -53,12 +53,4 @@ public class Metamorphose extends Spell {
 			getPlayer().getBoard().getMinions().add(new Mouton());
 		}
 	}
-	
-	/**
-	* @return a new Metamorphose
-	*/
-	public static Spell createMetamorphose(){
-		  return new Metamorphose();
-	}
-
 }

@@ -37,12 +37,4 @@ public class ExplosionDesArcanes extends Spell {
 			 minion.takeDamage(1);
 		 }
 	}
-	
-	/**
-	 * @return a new ExplosionDesArcanes
-	 */
-	public static Spell createExplosionDesArcanes(){
-		  return new ExplosionDesArcanes();
-	}
-
 }

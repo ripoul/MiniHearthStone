@@ -48,12 +48,4 @@ public class BenedictionDePuissance extends Spell {
 		}
 		m.setDamage(m.getDamage() + 1);
 	}
-	
-	/**
-	 * @return a new BenedictionDePuissance
-	 */
-	public static Spell createBenedictionDePuissance(){
-		  return new BenedictionDePuissance();
-	}
-
 }

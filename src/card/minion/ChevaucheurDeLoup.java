@@ -18,12 +18,4 @@ public class ChevaucheurDeLoup extends Minion {
   public ChevaucheurDeLoup() {
 	  super("ChevaucheurDeLoup", 3, 1, 3);
   }
-
-  /**
-  * @return a new ChevaucheurDeLoup
-  */
-  public static Minion createChevaucheurDeLoup(){
-	  return new MinionChargeDecorator(new ChevaucheurDeLoup());
-  }
-
 }

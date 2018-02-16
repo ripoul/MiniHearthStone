@@ -38,12 +38,4 @@ public class Consecration extends Spell {
 		 }
 		 getPlayer().getEnnemy_player().getHero().takeDamage(2);
 	}
-	
-	/**
-	 * @return a new Consecration
-	 */
-	public static Spell createConsecration(){
-		  return new Consecration();
-	}
-	
 }

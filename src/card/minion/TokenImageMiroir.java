@@ -18,13 +18,4 @@ public class TokenImageMiroir extends Minion {
 	public TokenImageMiroir() {
 	    super("ImageMiroir", 0, 2, 0);
 	}
-
-	
-	/**
-	* @return a new TokenImageMiroir
-	*/
-	public static Minion createImageMiroir(){
-		return new MinionTauntDecorator(new TokenImageMiroir());
-	}
-
 }

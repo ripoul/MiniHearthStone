@@ -16,11 +16,4 @@ public class Mouton extends Minion {
 	public Mouton() {
 		super("Mouton", 1, 1, 0);
 	}
-	
-	/**
-	* @return a new Mouton
-	*/
-	public static Minion createMouton(){
-		return new Mouton();
-	}
 }

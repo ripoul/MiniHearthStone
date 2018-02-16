@@ -1,7 +1,9 @@
 package card.spell;
 
 import card.CardFactory;
+import card.minion.Minion;
 import card.minion.TokenImageMiroir;
+import card.minion.decorator.MinionTauntDecorator;
 
 /**
  * 
@@ -30,15 +32,13 @@ public class ImageMiroir extends Spell {
 	 */
 	@Override
 	public void cast() {
-		TokenImageMiroir.createImageMiroir().summon();
-		TokenImageMiroir.createImageMiroir().summon();
+		Minion m1 = new MinionTauntDecorator(new TokenImageMiroir());
+		Minion m2 = new MinionTauntDecorator(new TokenImageMiroir());
+
+		m1.setPlayer(this.getPlayer());
+		m2.setPlayer(this.getPlayer());
+
+		m1.summon();
+		m2.summon();
 	}
-	
-	/**
-	 * @return a new ImageMiroir
-	 */
-	public static Spell createImageMiroir(){
-		  return new ImageMiroir();
-	}
-	
 }

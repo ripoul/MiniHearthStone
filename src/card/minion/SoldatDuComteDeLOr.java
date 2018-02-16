@@ -18,12 +18,4 @@ public class SoldatDuComteDeLOr extends Minion {
 	public SoldatDuComteDeLOr() {
 		super("SoldatDuComteDeLOr", 1, 2, 1);
 	}
-
-	/**
-	* @return a new SoldatDuComteDeLOr
-	*/
-  public static Minion createSoldatDuComteDeLOr(){
-	  return new MinionTauntDecorator(new SoldatDuComteDeLOr());
-  }
-
 }
