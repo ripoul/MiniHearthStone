@@ -2,7 +2,6 @@ package hero;
 
 import card.CardFactory;
 import card.CardFactoryWarrrior;
-import game.Observer.Observer;
 
 import java.util.ArrayList;
 import java.util.Arrays;

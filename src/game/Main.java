@@ -1,8 +1,5 @@
 package game;
 
-import java.util.ArrayList;
-import java.util.Random;
-
 import card.Card;
 import card.minion.Minion;
 import game.Observer.HeroLifeObserver;
@@ -10,7 +7,9 @@ import hero.Hero;
 import hero.Mage;
 import hero.Paladin;
 import hero.Warrior;
-import mechanics.TargetableEntity;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Main {
 	public static void main(String[] args) {
@@ -43,6 +42,7 @@ public class Main {
 
 	}
 
+	//méthode pour le déroulement d'un tour d'un joueur
 	private static void turn(Player player) {
 		player.gainMana();
 		player.setMana(player.getMana_max());
@@ -58,10 +58,12 @@ public class Main {
 			n = Affichage.lireInt();
 			switch(n){
 				case 1:
+					//affichage board + minions
 					player.getBoard().displayMinionAsList();
 					player.displayMyInfos();
 					break;
 				case 2:
+					//joue une carte
 					player.displayHand();
 					try {
 						n = Affichage.lireInt();
@@ -69,11 +71,10 @@ public class Main {
 						Card minion = player.getHand().get(n);
 						player.playCard(minion);
 
-					}catch(IndexOutOfBoundsException e){
-						//todo
-					}
+					}catch(IndexOutOfBoundsException e){}
 					break;
 				case 3:
+					//utilise le pouvoir du hero
 					player.getHero().setPlayer(player);
 					player.useHeroPower();
 					break;
@@ -82,7 +83,7 @@ public class Main {
 					player.wakeUpBoard();
 					break;
 				case 5:
-					/* use a card */
+					/* utilise une carte presente sur le board*/
 					player.displayBoard();
 					try{
 						n = Affichage.lireInt();
@@ -137,6 +138,9 @@ public class Main {
 
 	}
 
+	/*
+	* methode pour permettre à l'utilisateur de choisir son hero
+	*/
 	private static ArrayList<Player> beginGame() {
 
 		System.out.println("The game begin");
@@ -186,6 +190,7 @@ public class Main {
 		player1.setEnnemy_player(player2);
 		player2.setEnnemy_player(player1);
 
+		//enregistrement de l'observeur pour la vie du hero
 		HeroLifeObserver obs1 = new HeroLifeObserver(player_1_hero);
 		HeroLifeObserver obs2 = new HeroLifeObserver(player_2_hero);
 
@@ -195,7 +200,7 @@ public class Main {
 		ArrayList<Player> players = new ArrayList<Player>();
 
 		Random rn = new Random();
-		int rand = rn.nextInt(1);
+		int rand = rn.nextInt(2);
 		
 		if (rand == 1){
 			System.out.println("Player 2 begin !");

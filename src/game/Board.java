@@ -1,9 +1,9 @@
 package game;
 
-import java.util.ArrayList;
-
 import card.minion.Minion;
 import hero.Hero;
+
+import java.util.ArrayList;
 
 /**
  * 

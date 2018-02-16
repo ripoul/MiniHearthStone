@@ -1,7 +1,5 @@
 package game.Observer;
 
-import hero.Hero;
-
 public class HeroLifeObserver implements Observer{
 
     public HeroLifeObserver(Sujet sujet){

@@ -20,6 +20,8 @@ public class MinionChargeDecorator extends MinionDecorator {
 		super(m);
 		m.setState(new MinionReadyState(m));
 	}
+
+
 	@Override
 	public void setPlayer(Player p){
 		m.setPlayer(p);

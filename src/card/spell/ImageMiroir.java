@@ -1,6 +1,5 @@
 package card.spell;
 
-import card.CardFactory;
 import card.minion.Minion;
 import card.minion.TokenImageMiroir;
 import card.minion.decorator.MinionTauntDecorator;

@@ -1,12 +1,12 @@
 package hero;
 
+import card.CardFactory;
+import card.CardFactoryMage;
+import card.minion.Minion;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import card.*;
-import card.minion.Minion;
-import game.Observer.Observer;
 
 /**
  * 
@@ -41,7 +41,7 @@ public class Mage extends Hero {
 	public void useHeroPower() {
 		System.out.println("Selectionner l'index de l'entite a attaquer");
 		Scanner reader = new Scanner(System.in);
-		if (getPlayer().getEnnemy_player().getBoard().getMinions().size() == 0){
+		if (getPlayer().getEnnemy_player().getBoard().getMinions().isEmpty()){
 			System.out.println("Type 1 to attack the ennemy hero");
 			int n = reader.nextInt();
 			if (n == 1){
@@ -57,7 +57,7 @@ public class Mage extends Hero {
 				try {
 					m = getPlayer().getBoard().getMinions().get(n);
 					if (n == (getPlayer().getBoard().getMinions().size() + 1)) {
-						h = this.getPlayer().getEnnemy_player().getHero();;
+						h = this.getPlayer().getEnnemy_player().getHero();
 					}
 				}catch (IndexOutOfBoundsException e) {
 					System.out.println("Veuillez re entrer a nouveau un des index affiches plus haut");

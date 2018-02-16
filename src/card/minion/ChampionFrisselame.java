@@ -1,8 +1,5 @@
 package card.minion;
 
-import card.minion.decorator.MinionChargeDecorator;
-import card.minion.decorator.MinionLifeLeechDecorator;
-
 /**
  * 
  * @author gguillet lbrisjules

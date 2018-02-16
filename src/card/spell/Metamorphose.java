@@ -1,7 +1,5 @@
 package card.spell;
 
-import java.util.Scanner;
-
 import card.minion.Minion;
 import card.minion.Mouton;
 import game.Affichage;

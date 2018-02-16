@@ -1,9 +1,8 @@
 package card.spell;
 
-import java.util.ArrayList;
-
 import card.minion.Minion;
-import game.Player;
+
+import java.util.ArrayList;
 
 /**
  * 

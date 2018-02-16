@@ -1,13 +1,12 @@
 package card.minion;
 
-import java.util.ArrayList;
-
 import card.Card;
 import game.Player;
 import mechanics.TargetableEntity;
-import state.MinionReadyState;
 import state.MinionSleepState;
 import state.MinionState;
+
+import java.util.ArrayList;
 
 /**
  * 

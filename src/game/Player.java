@@ -3,9 +3,7 @@ package game;
 import java.util.ArrayList;
 import java.util.Random;
 import card.Card;
-import card.CardFactory;
 import card.minion.Minion;
-import card.minion.decorator.MinionChargeDecorator;
 import hero.Hero;
 import state.MinionReadyState;
 
@@ -77,7 +75,7 @@ public class Player {
 	 * 
 	 */
 	public void playCard(Card card){
-		if (mana > card.getManaCost()){
+		if (mana >= card.getManaCost()){
 			card.setPlayer(this);
 			Boolean b = card.use();
 			if(b){

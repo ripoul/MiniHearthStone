@@ -1,14 +1,13 @@
 package hero;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import card.Card;
 import card.CardFactory;
 import game.Observer.Observer;
 import game.Observer.Sujet;
 import game.Player;
 import mechanics.TargetableEntity;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * 

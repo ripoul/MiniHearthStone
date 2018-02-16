@@ -1,7 +1,6 @@
 package card.minion.decorator;
 
 import card.minion.Minion;
-import game.Main;
 import mechanics.TargetableEntity;
 
 /**

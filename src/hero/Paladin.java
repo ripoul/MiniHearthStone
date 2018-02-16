@@ -1,14 +1,13 @@
 package hero;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import card.CardFactory;
 import card.CardFactoryPaladin;
 import card.minion.Minion;
 import card.minion.RecrueDeLaMainDArgent;
-import game.Observer.Observer;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Paladin extends Hero {
 	private CardFactory cards;

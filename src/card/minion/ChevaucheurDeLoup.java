@@ -8,8 +8,6 @@ package card.minion;
  *
  */
 
-import card.minion.decorator.MinionChargeDecorator;
-
 public class ChevaucheurDeLoup extends Minion {
 
   /**

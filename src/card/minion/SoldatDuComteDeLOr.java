@@ -1,7 +1,5 @@
 package card.minion;
 
-import card.minion.decorator.MinionTauntDecorator;
-
 /**
  * 
  * @author gguillet lbrisjules
