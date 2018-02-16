@@ -46,7 +46,7 @@ public class BenedictionDePuissance extends Spell {
 				
 			}
 		}
-		m.setDamage(m.getDamage() + 1);
+		m.setDamage(m.getDamage() + 3);
 	}
 	
 	/**
