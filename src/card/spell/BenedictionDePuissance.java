@@ -8,9 +8,9 @@ import game.Affichage;
 import game.Board;
 
 /**
- * 
+ *
  * @author gguillet lbrisjules
- * 
+ *
  * Concrete Spell object BenedictionDePuissance
  *
  */
@@ -18,7 +18,7 @@ import game.Board;
 public class BenedictionDePuissance extends Spell {
 
 	/**
-	 * 
+	 *
 	 *BenedictionDePuissance constructor
 	 *
 	 */
@@ -27,25 +27,29 @@ public class BenedictionDePuissance extends Spell {
 	}
 
 	/**
-	 * 
+	 *
 	 *Override of the cast method of Spell
 	 *Ask the player to select a target minion of his board
 	 *give the selected minion +1 to attack
 	 *
 	 */
 	@Override
-	public void cast() {
+	public boolean cast() {
 		getPlayer().getBoard().displayMinionAsList();
-		System.out.println("Entrer l'index du serviteur � cibler afin de lui accorder benediction de puissance");
-		Minion m = null;
-		while(m == null) {
-			int n = Affichage.lireInt();
-			try {
-				m = getPlayer().getBoard().getMinions().get(n);
-			}catch (IndexOutOfBoundsException e) {
-				
+		if (!getPlayer().getBoard().getMinions().isEmpty()) {
+			System.out.println("Entrer l'index du serviteur � cibler afin de lui accorder benediction de puissance");
+			Minion m = null;
+			while (m == null) {
+				int n = Affichage.lireInt();
+				try {
+					m = getPlayer().getBoard().getMinions().get(n);
+				} catch (IndexOutOfBoundsException e) {
+
+				}
 			}
+			m.setDamage(m.getDamage() + 3);
+			return true;
 		}
-		m.setDamage(m.getDamage() + 3);
+		return false;
 	}
 }

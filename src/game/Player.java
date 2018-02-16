@@ -79,8 +79,10 @@ public class Player {
 	public void playCard(Card card){
 		if (mana > card.getManaCost()){
 			card.setPlayer(this);
-			card.use();
-			hand.remove(card);
+			Boolean b = card.use();
+			if(!b){
+				hand.remove(card);
+			}
 		}else{
 			System.out.println("Not enough mana !");
 		}

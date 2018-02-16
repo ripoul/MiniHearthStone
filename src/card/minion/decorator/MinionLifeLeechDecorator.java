@@ -32,8 +32,8 @@ public class MinionLifeLeechDecorator extends MinionDecorator {
 	}
 
     @Override
-    public void use() {
-	    m.use();
+    public boolean use() {
+	    return m.use();
     }
 
     @Override

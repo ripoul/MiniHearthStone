@@ -26,8 +26,9 @@ public class MaitriseDeBlocage extends Spell {
 	 *
 	 */
 	@Override
-	public void cast() {
+	public boolean cast() {
 		int current_armor = this.getPlayer().getHero().getArmor();
 		this.getPlayer().getHero().setArmor(current_armor + 5);
+		return true;
 	}
 }

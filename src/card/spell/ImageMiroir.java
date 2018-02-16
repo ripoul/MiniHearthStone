@@ -31,7 +31,7 @@ public class ImageMiroir extends Spell {
 	 *
 	 */
 	@Override
-	public void cast() {
+	public boolean cast() {
 		Minion m1 = new MinionTauntDecorator(new TokenImageMiroir());
 		Minion m2 = new MinionTauntDecorator(new TokenImageMiroir());
 
@@ -40,5 +40,6 @@ public class ImageMiroir extends Spell {
 
 		m1.summon();
 		m2.summon();
+		return true;
 	}
 }

@@ -82,9 +82,10 @@ public abstract class Minion extends Card implements TargetableEntity{
 	 * 
 	 */
 	@Override
-	  public void use() {
+	  public boolean use() {
 		  player.setMana(player.getMana() - manaCost);
 		  summon();
+		  return true;
 	  }
 	
 	/**
@@ -222,8 +223,7 @@ public abstract class Minion extends Card implements TargetableEntity{
 	 */
 	@Override
 	public String toString() {
-		return "Minion [name=" + this.name + ", damage=" + damage + ", health=" + health + ", manaCost=" + this.manaCost
-				+ ", state=" + state + "]";
+		return "Minion [name=" + this.name + ", damage=" + damage + ", health=" + health + ", manaCost=" + this.manaCost + "]";
 	}  
 	
 }

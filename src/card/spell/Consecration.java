@@ -31,11 +31,13 @@ public class Consecration extends Spell {
 	 *
 	 */
 	@Override
-	public void cast() {
-		 ArrayList<Minion> ennemy_minions = ((Player) getPlayer()).getEnnemy_player().getBoard().getMinions();
-		 for (Minion minion : ennemy_minions) {
-			 minion.takeDamage(2);
-		 }
+	public boolean cast() {
+		 ArrayList<Minion> ennemy_minions = getPlayer().getEnnemy_player().getBoard().getMinions();
+
+		 for (int i =0; i<ennemy_minions.size();i++){
+			 ennemy_minions.get(i).takeDamage(2);
+		}
 		 getPlayer().getEnnemy_player().getHero().takeDamage(2);
+		 return true;
 	}
 }

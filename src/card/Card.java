@@ -22,7 +22,7 @@ public abstract class Card {
   /**
 	* Abstract method use
 	*/
-  public abstract void use();
+  public abstract boolean use();
 
 /**
  * @return the name

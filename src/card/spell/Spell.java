@@ -31,7 +31,7 @@ public Spell(String name, int manaCost) {
 /**
  * abstract method cast
  */
-  public abstract void cast();
+  public abstract boolean cast();
   
   /**
    * Override of the method use of Card which remove the cost in mana of the spell
@@ -39,9 +39,13 @@ public Spell(String name, int manaCost) {
    * Use cast method
    */
   @Override
-  public void use() {
-	  player.setMana(player.getMana() - manaCost);
-	  cast();
+  public boolean use() {
+
+	  if(cast()){
+          player.setMana(player.getMana() - manaCost);
+          return true;
+      }
+      return false;
   }
 
  /**
